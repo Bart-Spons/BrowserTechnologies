@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belastingsdienst</title>
+</head>
+
+<body>
+
+    <form action="/submit" method="post">
+        <label for="name">Naam:</label>
+        <input type="text" id="name" name="name" required>
+
+        <details>
+            <summary>Extra info</summary>
+            <label for="age">Leeftijd:</label>
+            <input type="number" id="age" name="age">
+            <br>
+
+            <label for="bio">Biografie:</label>
+            <textarea id="bio" name="bio"></textarea>
+        </details>
+
+        
+        <submit>
+            <input type="submit" value="Verstuur">
+        </submit>
+    </form>
+</body>
+
+</html>
