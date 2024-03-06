@@ -14,7 +14,7 @@
             <fieldset>
                 <legend>1a</legend>
                 <label for="voorletters">Voorletter(s):</label>
-                <input type="text" id="voorletters" name="voorletters" pattern="[A-Za-z\.]*" required>
+                <input type="text" id="voorletters" name="voorletters" required>
                 <br>
 
                 <label for="tussenvoegsel">Tussenvoegsel:</label>
@@ -25,22 +25,21 @@
                 <input type="text" id="achternaam" name="achternaam" pattern="[A-Za-z\.]*" required>
                 <br>
 
+                <!-- Checken of het correct is -->
                 <label for="burgerservicenummer">Burgerservicenummer:</label>
                 <input type="text" id="burgerservicenummer" name="burgerservicenummer" pattern="\d{9}" maxlength="9"
                     title="Een BSN bestaat uit 9 cijfers. Voer alstublieft een geldig burgerservicenummer in." required>
                 <span class="feedback verborgen" data-for="burgerservicenummer">Ongeldig BSN ingevoerd.</span>
                 <br>
 
+                <!-- kan niet in de toekomst zijn -->
                 <label for="overlijdensdatum">Overlijdensdatum:</label>
                 <input type="date" id="overlijdensdatum" name="overlijdensdatum" required>
                 <br>
 
-
-
                 <input type="button" value="Volgende" class="volgendeBtn" data-next="form2">
             </fieldset>
         </form>
-
 
         <form id="form2" class="formulier verborgen">
             <fieldset>
@@ -61,7 +60,7 @@
                     <p>Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of
                         partnerschapsvoorwaarden laten vastleggen in een notariële akte?</p>
                     <input type="radio" id="huwVoorwaardenJa" name="huwelijkseVoorwaarden" value="ja"
-                        data-next="verrekenbedingContainer">
+                        data-next="verrekenbedingContainer" required>
                     <label for="huwVoorwaardenJa">Ja</label>
                     <br>
                     <input type="radio" id="huwVoorwaardenNee" name="huwelijkseVoorwaarden" value="nee">

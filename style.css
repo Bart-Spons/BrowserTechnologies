@@ -7,3 +7,11 @@
 .verborgen {
     display: none;
 }
+
+:is(form, fieldset,label, input):has(:user-valid){
+    border-color: green;
+}
+
+*:has(:user-invalid){
+    border-color: red;
+}
