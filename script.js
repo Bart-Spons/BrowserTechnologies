@@ -101,10 +101,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    // dit werkt ongeveer
+    // nog even uitwerken
+
     function formIsVolledigIngevuld(form) {
         // Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
 
         const inputs = form.querySelectorAll('input[required], select[required], textarea[required]')
+        const radioGroupsChecked = new Set();
+
 
         for (const input of inputs) {
             const vraagContainer = input.closest('.vraagContainer');
@@ -114,7 +119,26 @@ document.addEventListener('DOMContentLoaded', function () {
             //trim = verwijderd spaties
             if (!input.value.trim()) return false; // Verifieert of het veld ingevuld is
 
-            if (input.type === 'checkbox' && !input.checked) return false; // Verifieert of het veld aangevinkt is
+
+            // dit werkt niet maar in theorie moet dit een radiobutton worden
+            if (input.type === 'radio') {
+                const name = input.name;
+
+                // Sla deze stap over als deze groep radiobuttons al is gecontroleerd
+                if (radioGroupsChecked.has(name)) continue;
+
+                // Controleer of ten minste één knop in de groep is geselecteerd
+                const isSelected = form.querySelector(`input[type="radio"][name="${name}"]:checked`) !== null;
+
+                if (!isSelected) {
+                    // Geen radioknop geselecteerd in deze groep
+                    return false;
+                }
+
+                // Markeer deze groep als gecontroleerd
+                radioGroupsChecked.add(name);
+            }
+
         }
         return true;
     }
