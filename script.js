@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // e = event
 const showNext = (e) => {
-    console.log({ e });
-    console.log(e.target.defaultValue);
+    // console.log({ e });
+    // console.log(e.target.defaultValue);
 
     const huidigeSectie = e.target.closest('.vraagContainer');
-    console.log({ huidigeSectie });
+    // console.log({ huidigeSectie });
     const isNested = huidigeSectie.getAttribute('data-id');
 
-    console.log(isNested);
+    // console.log(isNested);
 
     if (!isNested) return;
 
@@ -106,15 +106,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const inputs = form.querySelectorAll('input[required], select[required], textarea[required]')
 
-
-        for (input of inputs) {
+        for (const input of inputs) {
             const vraagContainer = input.closest('.vraagContainer');
 
-            if (vraagContainer.classList.contains('verborgen'));
+            if (vraagContainer.classList.contains('verborgen')) continue;
             console.log(input);
             //trim = verwijderd spaties
             if (!input.value.trim()) return false; // Verifieert of het veld ingevuld is
 
+            if (input.type === 'checkbox' && !input.checked) return false; // Verifieert of het veld aangevinkt is
         }
         return true;
     }
