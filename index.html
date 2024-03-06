@@ -1,99 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belastingsdienst</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <div id="formulierenContainer">
-        <form id="form1" class="formulier">
-            <fieldset>
-                <legend>1a</legend>
-                <label for="voorletters">Voorletter(s):</label>
-                <input type="text" id="voorletters" name="voorletters" required>
-                <br>
+  <body>
+    <div class="vraagContainer">
+      <form id="form1" class="formulier">
+        <fieldset>
+          <legend>1a</legend>
+          <label for="voorletters">Voorletter(s):</label>
+          <input type="text" id="voorletters" name="voorletters" required />
+          <br />
 
-                <label for="tussenvoegsel">Tussenvoegsel:</label>
-                <input type="text" id="tussenvoegsel" name="tussenvoegsel">
-                <br>
+          <label for="tussenvoegsel">Tussenvoegsel:</label>
+          <input type="text" id="tussenvoegsel" name="tussenvoegsel" />
+          <br />
 
-                <label for="achternaam">Achternaam:</label>
-                <input type="text" id="achternaam" name="achternaam" pattern="[A-Za-z\.]*" required>
-                <br>
+          <label for="achternaam">Achternaam:</label>
+          <input
+            type="text"
+            id="achternaam"
+            name="achternaam"
+            pattern="[A-Za-z\.]*"
+            required
+          />
+          <br />
 
-                <!-- Checken of het correct is -->
-                <label for="burgerservicenummer">Burgerservicenummer:</label>
-                <input type="text" id="burgerservicenummer" name="burgerservicenummer" pattern="\d{9}" maxlength="9"
-                    title="Een BSN bestaat uit 9 cijfers. Voer alstublieft een geldig burgerservicenummer in." required>
-                <span class="feedback verborgen" data-for="burgerservicenummer">Ongeldig BSN ingevoerd.</span>
-                <br>
+          <!-- Checken of het correct is -->
+          <label for="burgerservicenummer">Burgerservicenummer:</label>
+          <input
+            type="text"
+            id="burgerservicenummer"
+            name="burgerservicenummer"
+            pattern="\d{9}"
+            maxlength="9"
+            title="Een BSN bestaat uit 9 cijfers. Voer alstublieft een geldig burgerservicenummer in."
+            required
+          />
+          <span class="feedback verborgen" data-for="burgerservicenummer"
+            >Ongeldig BSN ingevoerd.</span
+          >
+          <br />
 
-                <!-- kan niet in de toekomst zijn -->
-                <label for="overlijdensdatum">Overlijdensdatum:</label>
-                <input type="date" id="overlijdensdatum" name="overlijdensdatum" required>
-                <br>
+          <!-- kan niet in de toekomst zijn -->
+          <label for="overlijdensdatum">Overlijdensdatum:</label>
+          <input
+            type="date"
+            id="overlijdensdatum"
+            name="overlijdensdatum"
+            required
+          />
+          <br />
 
-                <input type="button" value="Volgende" class="volgendeBtn" data-next="form2">
-            </fieldset>
-        </form>
+          <input
+            type="button"
+            value="Volgende"
+            class="volgendeBtn"
+            data-next="form2"
+          />
+        </fieldset>
+      </form>
 
-        <form id="form2" class="formulier verborgen">
-            <fieldset>
-                <legend>1b</legend>
-                <div class="vraagContainer">
-                    <label>Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van
-                        overlijden?</label>
-                    <br>
-                    <input type="radio" id="inputType1Yes" name="inputType1" value="ja"
-                        data-next="huwVoorwaardenContainer">
-                    <label for="inputType1Yes">Ja</label>
-                    <br>
-                    <input type="radio" id="inputType1No" name="inputType1" value="nee">
-                    <label for="inputType1No">Nee</label>
-                </div>
+      <form id="form2" class="formulier">
+        <fieldset>
+          <legend>1b</legend>
+          <!-- Nested betekend dat er meer inzit -->
+          <div class="vraagContainer" data-id="nested">
+            <label
+              >Was de overledene getrouwd of had de overledene een geregistreerd
+              partner op het moment van overlijden?
+            </label>
+            <br />
 
-                <div id="huwVoorwaardenContainer" class="vraagContainer verborgen">
-                    <p>Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of
-                        partnerschapsvoorwaarden laten vastleggen in een notariële akte?</p>
-                    <input type="radio" id="huwVoorwaardenJa" name="huwelijkseVoorwaarden" value="ja"
-                        data-next="verrekenbedingContainer" required>
-                    <label for="huwVoorwaardenJa">Ja</label>
-                    <br>
-                    <input type="radio" id="huwVoorwaardenNee" name="huwelijkseVoorwaarden" value="nee">
-                    <label for="huwVoorwaardenNee">Nee</label>
-                </div>
+            <input type="radio" name="21b" id="yes" value="ja" />
+            <label for="yes">Ja</label>
+            <br />
+            <input type="radio" name="21b" id="no" value="nee" />
+            <label for="no">Nee</label>
+          </div>
 
-                <div id="verrekenbedingContainer" class="vraagContainer verborgen">
-                    <p>Hadden de overledene en diens partner een finaal verrekenbeding?</p>
-                    <!-- Verdere inputs -->
-                    <input type="radio" id="verrekenbedingJa" name="verrekenbeding" value="ja">
-                    <label for="verrekenbedingJa">Ja</label>
-                    <br>
-                    <input type="radio" id="verrekenbedingNee" name="verrekenbeding" value="nee">
-                    <label for="verrekenbedingNee">Nee</label>
-                </div>
+          <div class="vraagContainer optioneel">
+            <p>
+              Hadden de overledene en diens echtgenoot of geregistreerd partner
+              huwelijkse of partnerschapsvoorwaarden laten vastleggen in een
+              notariële akte?
+            </p>
+            <input
+              type="radio"
+              id="huwVoorwaardenJa"
+              name="huwelijkseVoorwaarden"
+              value="ja"
+              required
+            />
+            <label for="huwVoorwaardenJa">Ja</label>
+            <br />
+            <input
+              type="radio"
+              id="huwVoorwaardenNee"
+              name="huwelijkseVoorwaarden"
+              value="nee"
+            />
+            <label for="huwVoorwaardenNee">Nee</label>
+          </div>
 
-                <div class="huwelijk" name="huwelijk">
-                    <label for="huwelijksdatum">Huwelijksdatum:</label>
-                    <input type="date" id="huwelijksdatum" name="huwelijksdatum" required>
-                </div>
+          <div class="vraagContainer optioneel">
+            <p>
+              Hadden de overledene en diens partner een finaal verrekenbeding?
+            </p>
+            <!-- Verdere inputs -->
+            <input
+              type="radio"
+              id="verrekenbedingJa"
+              name="verrekenbeding"
+              value="ja"
+            />
+            <label for="verrekenbedingJa">Ja</label>
+            <br />
+            <input
+              type="radio"
+              id="verrekenbedingNee"
+              name="verrekenbeding"
+              value="nee"
+            />
+            <label for="verrekenbedingNee">Nee</label>
+          </div>
 
-            </fieldset>
-        </form>
+          <div class="vraagContainer optioneel">
+            <label for="huwelijksdatum">Huwelijksdatum:</label>
+            <input
+              type="date"
+              id="huwelijksdatum"
+              name="huwelijksdatum"
+            />
+          </div>
+
+          <input
+            type="button"
+            value="Volgende"
+            class="volgendeBtn"
+            data-next="form3"
+          />
+        </fieldset>
+      </form>
+
+      <form id="form3" class="formulier">
+        <fieldset>
+          <legend>1b</legend>
+          <div class="vraagContainer">
+            <label
+              >Was de overledene getrouwd of had de overledene een geregistreerd
+              partner op het moment van overlijden?</label
+            >
+            <br />
+            <input type="radio" name="yes" value="ja" />
+            <label for="yes">Ja</label>
+            <br />
+            <input type="radio" name="no" value="nee" />
+            <label for="no">Nee</label>
+          </div>
+
+          <div class="vraagContainer optioneel">
+            <p>
+              Hadden de overledene en diens echtgenoot of geregistreerd partner
+              huwelijkse of partnerschapsvoorwaarden laten vastleggen in een
+              notariële akte?
+            </p>
+            <input
+              type="radio"
+              name="huwelijkseVoorwaarden"
+              value="ja"
+              data-next="verrekenbedingContainer"
+              required
+            />
+            <label for="huwVoorwaardenJa">Ja</label>
+            <br />
+            <input type="radio" name="huwelijkseVoorwaarden" value="nee" />
+            <label for="huwVoorwaardenNee">Nee</label>
+          </div>
+
+          <div class="vraagContainer optioneel">
+            <p>
+              Hadden de overledene en diens partner een finaal verrekenbeding?
+            </p>
+            <!-- Verdere inputs -->
+            <input type="radio" name="verrekenbeding" value="ja" />
+            <label for="verrekenbedingJa">Ja</label>
+            <br />
+            <input type="radio" name="verrekenbeding" value="nee" />
+            <label for="verrekenbedingNee">Nee</label>
+          </div>
+
+          <div class="huwelijk optioneel" name="huwelijk">
+            <label for="huwelijksdatum">Huwelijksdatum:</label>
+            <input type="date" name="huwelijksdatum" required />
+          </div>
+        </fieldset>
+      </form>
     </div>
 
-
-
-
-
-
-
-
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

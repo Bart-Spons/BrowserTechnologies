@@ -1,84 +1,94 @@
+// Query voor alle formulier (als iedere form de class heeft)
+const formulieren = document.querySelectorAll('.formulier');
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    const formulier = document.getElementById('form2');
+    // moet een keer te zien zijn in de dom
+    console.log('DOM is geladen');
 
-    // Dynamische logica voor het tonen van vervolgsecties
-    formulier.addEventListener('change', function (e) {
-        const huidigeSectie = e.target.closest('.vraagContainer');
-        const volgendeId = e.target.getAttribute('data-next');
-        const volgendeSectie = document.getElementById(volgendeId);
+    // alle formulieren verbergen
+    formulieren.forEach((formulier, index) => {
+        if (index !== 0) {
+            formulier.classList.add('verborgen');
+        }
+        // Dynamische logica voor het tonen van vervolgsecties
+        formulier.addEventListener('change', showNext);
+    });
 
-        let volgende = huidigeSectie.nextElementSibling;
-        while (volgende) {
-            if (volgende.classList.contains('vraagContainer')) {
-                volgende.classList.add('verborgen');
+    // alle optionele verborgen maken
+    const optioneleVragen = document.querySelectorAll('.optioneel');
+    // for loop om alles te verbergen
+    optioneleVragen.forEach(vraag => {
+        vraag.classList.add('verborgen');
+    });
+});
+
+// e = event
+const showNext = (e) => {
+    console.log({ e });
+    console.log(e.target.defaultValue);
+
+    const huidigeSectie = e.target.closest('.vraagContainer');
+    console.log({ huidigeSectie });
+    const isNested = huidigeSectie.getAttribute('data-id');
+
+    console.log(isNested);
+
+    if (!isNested) return;
+
+    let volgendeSectie = huidigeSectie.nextElementSibling;
+
+    // Blijf de volgende sectie zoeken tot je een sectie vindt die niet optioneel is
+    while (volgendeSectie) {
+        // Controleer of de volgende sectie de gewenste eigenschap heeft
+        if (volgendeSectie.classList.contains('optioneel')) {
+            // Doe de actie afhankelijk van de gebruikerskeuze
+            if (e.target.defaultValue === 'ja') {
+                volgendeSectie.classList.remove('verborgen');
+            } else if (e.target.defaultValue === 'nee') {
+                volgendeSectie.classList.add('verborgen');
             }
-            volgende = volgende.nextElementSibling;
+
         }
+        else break; // Stop de loop zodra je een niet-optionele sectie hebt verwerkt
 
-        if (volgendeSectie) {
-            volgendeSectie.classList.remove('verborgen');
-        }
-    });
-
-    // Validatie en feedback
-    formulier.addEventListener('input', function (e) {
-        const target = e.target;
-        const feedbackElement = document.querySelector(`.feedback[data-for="${target.id}"]`);
-
-        if (target.validity.valid) {
-            feedbackElement.classList.add('verborgen');
-        } else {
-            feedbackElement.classList.remove('verborgen');
-        }
-    });
-
-    // Specifieke logica voor het tonen/verbergen van de huwelijk sectie
-    var verrekenbedingJaRadio = document.querySelector('#verrekenbedingJa');
-    var huwelijkContainer = document.querySelector('.huwelijk');
-
-    function checkVerrekenbedingRadio() {
-        if (verrekenbedingJaRadio.checked) {
-            huwelijkContainer.style.display = 'block';
-        } else {
-            huwelijkContainer.style.display = 'none';
-        }
+        // Ga naar de volgende sectie als de huidige sectie niet voldoet
+        volgendeSectie = volgendeSectie.nextElementSibling;
     }
 
-    document.querySelectorAll('input[name="verrekenbeding"]').forEach(radio => {
-        radio.addEventListener('change', checkVerrekenbedingRadio);
-    });
-
-    // Initieel de check uitvoeren
-    checkVerrekenbedingRadio();
-});
+}
 
 
-//trouwdatum niet laten zien, dit moet nog
-document.addEventListener('DOMContentLoaded', function () {
-    var verrekenbedingJaRadio = document.querySelector('#verrekenbedingJa');
-    var huwelijkContainer = document.querySelector('.huwelijk');
 
-    function checkVerrekenbedingRadio() {
-        if (verrekenbedingJaRadio.checked) {
-            huwelijkContainer.style.display = 'block';
-        } else {
-            huwelijkContainer.style.display = 'none';
-        }
-    }
+// const volgendeSectie = document.getElementById(volgendeId);
+// // als er geen volgende is
+// if (volgendeId === null) return;
 
-    verrekenbedingJaRadio.addEventListener('change', checkVerrekenbedingRadio);
-    document.querySelector('#verrekenbedingNee').addEventListener('change', checkVerrekenbedingRadio);
 
-    // Call checkVerrekenbedingRadio to set the initial state
-    checkVerrekenbedingRadio();
-});
+// let volgende = huidigeSectie.nextElementSibling;
+// while (volgende) {
+//     if (volgende.classList.contains('vraagContainer')) {
+//         volgende.classList.add('verborgen');
+//     }
+//     volgende = volgende.nextElementSibling;
+// }
+
+// if (volgendeSectie) {
+//     volgendeSectie.classList.remove('verborgen');
+// }
+
+
+
+
 
 //form1 laten zien en form2 nog niet
+// volgende form button
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.volgendeBtn').forEach(btn => {
         btn.addEventListener('click', function () {
             const huidigForm = btn.closest('.formulier');
             if (formIsVolledigIngevuld(huidigForm)) {
+
                 const volgendeFormId = btn.getAttribute('data-next');
                 const volgendeForm = document.getElementById(volgendeFormId);
                 // Verwijder de 'verborgen' klasse om het volgende formulier te tonen
@@ -89,13 +99,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+
+
     function formIsVolledigIngevuld(form) {
         // Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
-        let isValid = true;
-        form.querySelectorAll('input[required], select[required], textarea[required]').forEach(input => {
-            if (!input.value.trim()) isValid = false; // Verifieert of het veld ingevuld is
-        });
-        return isValid;
+
+        const inputs = form.querySelectorAll('input[required], select[required], textarea[required]')
+
+
+        for (input of inputs) {
+            const vraagContainer = input.closest('.vraagContainer');
+
+            if (vraagContainer.classList.contains('verborgen'));
+            console.log(input);
+            //trim = verwijderd spaties
+            if (!input.value.trim()) return false; // Verifieert of het veld ingevuld is
+
+        }
+        return true;
     }
 });
 
+// Validatie en feedback
+// Is alles ingevuld?
+// formulier.addEventListener('input', function (e) {
+//     const target = e.target;
+//     const feedbackElement = document.querySelector(`.feedback[data-for="${target.id}"]`);
+
+//     if (target.validity.valid) {
+//         feedbackElement.classList.add('verborgen');
+//     } else {
+//         feedbackElement.classList.remove('verborgen');
+//     }
+// });
