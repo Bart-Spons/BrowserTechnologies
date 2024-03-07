@@ -107,6 +107,15 @@ function veldIsVolledigIngevuld(veld) {
 };
 
 
+function resetvalue(e) {
+    const type = e.getAttribute('type');
+    if (type === 'radio') {
+        e.checked = e.id.includes('nee');
+    } else {
+        e.value = '';
+    }
+}
+
 
 // Functie om te controleren of het formulier geldig is
 // Als het formulier geldig is, ga dan naar het volgende formulier (wordt ingeladen)
@@ -134,6 +143,7 @@ const validateForm = (form) => {
         const veld = alleVelden[i];
         console.log('isIngevuld ' + veldIsVolledigIngevuld(veld));
 
+        
 
 
         if (!veld.checkValidity()) {
@@ -250,3 +260,17 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 // });
 
+// toggle gebruiken om de velden leeg maken
+// 
+
+// Dit moet in de for loop
+// Meegeven aan HTML element
+
+// function resetvalue(e) {
+//     const type = e.getAttribute('type');
+//     if (type === 'radio') {
+//         e.checked = e.id.includes('nee');
+//     } else {
+//         e.value = '';
+//     }
+// }
