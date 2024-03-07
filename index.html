@@ -43,7 +43,7 @@
             title="BSM"
             required
           />
-          <span data-error> Te lang. </span>
+          <span data-error>Vul een geldig BSN nummer in van 9 nummers </span>
           <br />
 
           <!-- kan niet in de toekomst zijn -->
@@ -145,7 +145,7 @@
       <form id="form3" class="formulier">
         <fieldset>
           <legend>1c</legend>
-          <div class="vraagContainer">
+          <div class="vraagContainer" data-id="nested">
             <label>Had de overledene kinderen?</label>
             <br />
             <input type="radio" name="4" value="ja" required />
@@ -162,10 +162,10 @@
             </label>
             <br />
 
-            <input type="radio" name="31b" id="3yes" value="ja" required />
+            <input type="radio" name="31b" id="3yes" value="ja" />
             <label for="yes">Ja</label>
             <br />
-            <input type="radio" name="31b" id="3no" value="nee" required />
+            <input type="radio" name="31b" id="3no" value="nee" />
             <label for="no">Nee</label>
           </div>
 

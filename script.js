@@ -209,43 +209,44 @@ document.addEventListener('DOMContentLoaded', function () {
 // Als alle optionele vragen zijn ingevuld, dan kan de gebruiker door naar de volgende vraag. Anders niet.
 
 // Event listener for the "ja" option
-document.querySelectorAll('input[type="radio"][value="ja"]').forEach(option => {
-    option.addEventListener('change', function () {
-        const huidigForm = option.closest('.formulier');
-        const optioneleVragen = huidigForm.querySelectorAll('.optioneel');
-        const volgendeBtn = huidigForm.querySelector('.volgendeBtn');
+// document.querySelectorAll('input[type="radio"][value="ja"]').forEach(option => {
+//     option.addEventListener('change', function () {
+//         const huidigForm = option.closest('.formulier');
+//         const optioneleVragen = huidigForm.querySelectorAll('.optioneel');
+//         const volgendeBtn = huidigForm.querySelector('.volgendeBtn');
 
-        if (option.checked) {
-            // Show the optional questions
-            optioneleVragen.forEach(vraag => {
-                vraag.classList.remove('verborgen');
-            });
+//         if (option.checked) {
+//             // Show the optional questions
+//             optioneleVragen.forEach(vraag => {
+//                 vraag.classList.remove('verborgen');
+//             });
 
-            // Disable the next button until all optional questions are filled
-            volgendeBtn.disabled = true;
+//             // Disable the next button until all optional questions are filled
+//             volgendeBtn.disabled = true;
 
-            // Event listener for optional question inputs
-            optioneleVragen.forEach(vraag => {
-                const input = vraag.querySelector('input, select, textarea');
-                input.addEventListener('change', function () {
-                    // Check if all optional questions are filled
-                    const allFilled = Array.from(optioneleVragen).every(vraag => {
-                        const input = vraag.querySelector('input, select, textarea');
-                        return input.value.trim() !== '';
-                    });
+//             // Event listener for optional question inputs
+//             optioneleVragen.forEach(vraag => {
+//                 const input = vraag.querySelector('input, select, textarea');
+//                 input.addEventListener('change', function () {
+//                     // Check if all optional questions are filled
+//                     const allFilled = Array.from(optioneleVragen).every(vraag => {
+//                         const input = vraag.querySelector('input, select, textarea');
+//                         return input.value.trim() !== '';
+//                     });
 
-                    // Enable the next button if all optional questions are filled
-                    volgendeBtn.disabled = !allFilled;
-                });
-            });
-        } else {
-            // Hide the optional questions
-            optioneleVragen.forEach(vraag => {
-                vraag.classList.add('verborgen');
-            });
+//                     // Enable the next button if all optional questions are filled
+//                     volgendeBtn.disabled = !allFilled;
+//                 });
+//             });
+//         } else {
+//             // Hide the optional questions
+//             optioneleVragen.forEach(vraag => {
+//                 vraag.classList.add('verborgen');
+//             });
 
-            // Enable the next button
-            volgendeBtn.disabled = false;
-        }
-    });
-});
+//             // Enable the next button
+//             volgendeBtn.disabled = false;
+//         }
+//     });
+// });
+
