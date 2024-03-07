@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         // Dynamische logica voor het tonen van vervolgsecties
         formulier.addEventListener('change', showNext);
+        formulier.addEventListener('change', () => {
+            const isValid = validateForm(formulier);
+            if (isValid === null) return;
+
+            if (isValid) {
+                // hij is valid, klopt
+                // moet er nog meer weergegeven worden?
+                // zo nee, dan ga naar het volgende formulier als de form valid is
+                nextForm(formulier);
+            }
+        });
     });
 
     // alle optionele verborgen maken
@@ -24,22 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         vraag.classList.add('verborgen');
     });
 });
-
-// te lange bsn nummer
-// error message laten zien
-// var bsnInput = document.getElementById('burgerservicenummer');
-// var errorMessageSpan = document.getElementById('bsn-error-message');
-
-// bsnInput.addEventListener('input', function () {
-//     var inputValue = bsnInput.value;
-//     if (inputValue.length > 9) {
-//         // Toon de foutmelding
-//         errorMessageSpan.style.display = 'block';
-//     } else {
-//         // Verberg de foutmelding als het aantal tekens correct is
-//         errorMessageSpan.style.display = 'none';
-//     }
-// });
 
 // e = event
 // functie om de volgende vraag te laten zien
@@ -104,7 +99,70 @@ const showNext = (e) => {
 //     volgendeSectie.classList.remove('verborgen');
 // }
 
+function veldIsVolledigIngevuld(veld) {
+    // Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
+    console.log({ veld });
+    if (veld.value.trim()) return true; // Verifieert of het veld ingevuld is
+    else return false;
+};
 
+
+
+// Functie om te controleren of het formulier geldig is
+// Als het formulier geldig is, ga dan naar het volgende formulier (wordt ingeladen)
+const validateForm = (form) => {
+    const huidigForm = form;
+    const alleVelden = huidigForm.querySelectorAll('input[required], input[pattern]');
+    console.log({ alleVelden });
+    console.log({ huidigForm });
+    let formIsValid = true;
+
+
+    // Loop door alle velden van het formulier
+    for (let i = 0; i < alleVelden.length; i++) {
+        const veld = alleVelden[i];
+        if (!veldIsVolledigIngevuld(veld)) {
+
+            formIsValid = null;
+        }
+    }
+
+    if (formIsValid === null) return formIsValid;
+
+    // is het correct ingevuld
+    for (let i = 0; i < alleVelden.length; i++) {
+        const veld = alleVelden[i];
+        console.log('isIngevuld ' + veldIsVolledigIngevuld(veld));
+
+
+
+        if (!veld.checkValidity()) {
+            // border wordt rood
+            veld.classList.add('invalid'); // Voeg de 'invalid' klasse toe
+            veld.classList.remove('valid'); // Verwijder 'valid' als het veld ongeldig is
+            formIsValid = false;
+        } else {
+            // border was rood maar dat wordt nu weggehaald
+            veld.classList.remove('invalid'); // Verwijder de 'invalid' klasse
+            // border wordt groen
+            veld.classList.add('valid'); // Voeg de 'valid' klasse toe als het veld geldig is
+        }
+
+    };
+    return formIsValid;
+
+    // Als het formulier helemaal is ingevuld
+    // Dan gaat javascript checken of alles correct is ingevuld
+    // Is alles correct ingevuld, dan gaat het naar het volgende formulier
+
+    // Als het formulier geldig is, ga dan naar het volgende formulier (wordt ingeladen)
+
+}
+
+const nextForm = (huidigeForm) => {
+    const volgendeForm = huidigeForm.nextElementSibling;
+    volgendeForm.classList.remove('verborgen');
+}
 
 
 
@@ -115,39 +173,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Alle buttons heten volgendeBtn (class)
     document.querySelectorAll('.volgendeBtn').forEach(btn => {
         // Event listener voor elke button
-        btn.addEventListener('click', function () {
-            const huidigForm = btn.closest('.formulier');
-            const alleVelden = huidigForm.querySelectorAll('input[required], input[pattern]');
+        const huidigForm = btn.closest('.formulier');
 
-            let formIsValid = true;
-            alleVelden.forEach(veld => {
-                if (!veld.checkValidity()) {
-                    // border wordt rood
-                    veld.classList.add('invalid'); // Voeg de 'invalid' klasse toe
-                    veld.classList.remove('valid'); // Verwijder 'valid' als het veld ongeldig is
-                    formIsValid = false;
-                } else {
-                    // border was rood maar dat wordt nu weggehaald
-                    veld.classList.remove('invalid'); // Verwijder de 'invalid' klasse
-                    // border wordt groen
-                    veld.classList.add('valid'); // Voeg de 'valid' klasse toe als het veld geldig is
-                }
-            });
+        btn.addEventListener('click', () => {
+            const isValid = validateForm(huidigForm, btn);
+            if (isValid === null) return;
 
-            // Als het formulier geldig is, ga dan naar het volgende formulier (wordt ingeladen)
-            if (formIsValid) {
-                const volgendeFormId = btn.getAttribute('data-next');
-                const volgendeForm = document.getElementById(volgendeFormId);
-                volgendeForm.classList.remove('verborgen');
+            if (isValid) {
+                nextForm(huidigForm);
             }
-            //else {
-            // Als het formulier ongeldig is, toon dan een bericht
-            //    alert('Vul alstublieft alle vereiste velden in.');
-            // moet nog optimaler
-            // dit is nog niet de juiste oplossing, ook heel vervelend voor de gebruiker
-            //  }
+
+
         });
     });
+
+
 
     // overlijdensdatum mag niet in de toekomst zijn
     // bron: https://www.w3schools.com/js/js_date_methods.asp
