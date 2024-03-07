@@ -25,6 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// te lange bsn nummer
+// error message laten zien
+// var bsnInput = document.getElementById('burgerservicenummer');
+// var errorMessageSpan = document.getElementById('bsn-error-message');
+
+// bsnInput.addEventListener('input', function () {
+//     var inputValue = bsnInput.value;
+//     if (inputValue.length > 9) {
+//         // Toon de foutmelding
+//         errorMessageSpan.style.display = 'block';
+//     } else {
+//         // Verberg de foutmelding als het aantal tekens correct is
+//         errorMessageSpan.style.display = 'none';
+//     }
+// });
+
 // e = event
 // functie om de volgende vraag te laten zien
 
@@ -145,56 +161,51 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("overlijdensdatum").setAttribute("max", today);
     document.getElementById("huwelijksdatum").setAttribute("max", today);
 
-    // dit werkt ongeveer
-    // nog even uitwerken
-
-    // function formIsVolledigIngevuld(form) {
-    //     // Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
-
-    //     const inputs = form.querySelectorAll('input[required], select[required], textarea[required]')
-    //     const radioGroupsChecked = new Set();
-
-
-    //     for (const input of inputs) {
-    //         const vraagContainer = input.closest('.vraagContainer');
-
-    //         if (vraagContainer.classList.contains('verborgen')) continue;
-    //         console.log(input);
-    //         //trim = verwijderd spaties
-    //         if (!input.value.trim()) return false; // Verifieert of het veld ingevuld is
-
-
-    //         // dit werkt niet maar in theorie moet dit een radiobutton worden
-    //         if (input.type === 'radio') {
-    //             const name = input.name;
-
-    //             // Sla deze stap over als deze groep radiobuttons al is gecontroleerd
-    //             if (radioGroupsChecked.has(name)) continue;
-
-    //             // Controleer of ten minste één knop in de groep is geselecteerd
-    //             const isSelected = form.querySelector(`input[type="radio"][name="${name}"]:checked`) !== null;
-
-    //             if (!isSelected) {
-    //                 // Geen radioknop geselecteerd in deze groep
-    //                 return false;
-    //             }
-
-    //             // Markeer deze groep als gecontroleerd
-    //             radioGroupsChecked.add(name);
-    //         }
-
-    //     }
-    //     return true;
-    // }
-
-
-    // Zorg ervoor dat je deze functie ergens aanroept, bijvoorbeeld als onderdeel van een formulier submit handler
-    // Bijvoorbeeld:
-    // document.querySelector('form').onsubmit = function() {
-    //     return formIsVolledigIngevuld(this);
-    // };
-
-
-
 });
 
+// Als ja is ingevuld, dan moet de optionele vragen getoond worden
+// De volgende button mag pas werken als alle optionele vragen zijn ingevuld
+// Bij nee kan de gebruiker door naar de volgende vraag, dit werkt al goed. De Optionele vragen worden dan ook niet getoond
+// Als alle optionele vragen zijn ingevuld, dan kan de gebruiker door naar de volgende vraag. Anders niet.
+
+// Event listener for the "ja" option
+document.querySelectorAll('input[type="radio"][value="ja"]').forEach(option => {
+    option.addEventListener('change', function () {
+        const huidigForm = option.closest('.formulier');
+        const optioneleVragen = huidigForm.querySelectorAll('.optioneel');
+        const volgendeBtn = huidigForm.querySelector('.volgendeBtn');
+
+        if (option.checked) {
+            // Show the optional questions
+            optioneleVragen.forEach(vraag => {
+                vraag.classList.remove('verborgen');
+            });
+
+            // Disable the next button until all optional questions are filled
+            volgendeBtn.disabled = true;
+
+            // Event listener for optional question inputs
+            optioneleVragen.forEach(vraag => {
+                const input = vraag.querySelector('input, select, textarea');
+                input.addEventListener('change', function () {
+                    // Check if all optional questions are filled
+                    const allFilled = Array.from(optioneleVragen).every(vraag => {
+                        const input = vraag.querySelector('input, select, textarea');
+                        return input.value.trim() !== '';
+                    });
+
+                    // Enable the next button if all optional questions are filled
+                    volgendeBtn.disabled = !allFilled;
+                });
+            });
+        } else {
+            // Hide the optional questions
+            optioneleVragen.forEach(vraag => {
+                vraag.classList.add('verborgen');
+            });
+
+            // Enable the next button
+            volgendeBtn.disabled = false;
+        }
+    });
+});

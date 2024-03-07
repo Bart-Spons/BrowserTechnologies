@@ -23,3 +23,16 @@
 .valid {
   border: 2px solid green;
 }
+
+/* #bsn-error-message {
+  color: red;
+  display: none;
+} */
+span[data-error] {
+  display: none;
+}
+
+input:user-invalid + span[data-error] {
+  display: block;
+  color: red;
+}

@@ -33,18 +33,17 @@
 
           <!-- Checken of het correct is -->
           <label for="burgerservicenummer">Burgerservicenummer:</label>
+          <!-- type: numeric -->
+          <!-- error als het te lang is -->
           <input
             type="text"
             id="burgerservicenummer"
             name="burgerservicenummer"
             pattern="\d{9}"
-            maxlength="9"
-            title="Een BSN bestaat uit 9 cijfers. Voer alstublieft een geldig burgerservicenummer in."
+            title="BSM"
             required
           />
-          <span class="feedback verborgen" data-for="burgerservicenummer"
-            >Ongeldig BSN ingevoerd.</span
-          >
+          <span data-error> Te lang. </span>
           <br />
 
           <!-- kan niet in de toekomst zijn -->
@@ -77,10 +76,10 @@
             </label>
             <br />
 
-            <input type="radio" name="21b" id="yes" value="ja" />
+            <input type="radio" name="21b" id="yes" value="ja" required />
             <label for="yes">Ja</label>
             <br />
-            <input type="radio" name="21b" id="no" value="nee" />
+            <input type="radio" name="21b" id="no" value="nee" required />
             <label for="no">Nee</label>
           </div>
 
@@ -95,7 +94,6 @@
               id="huwVoorwaardenJa"
               name="huwelijkseVoorwaarden"
               value="ja"
-              required
             />
             <label for="huwVoorwaardenJa">Ja</label>
             <br />
@@ -153,10 +151,10 @@
               partner op het moment van overlijden?</label
             >
             <br />
-            <input type="radio" name="yes" value="ja" />
+            <input type="radio" name="3" value="ja" />
             <label for="yes">Ja</label>
             <br />
-            <input type="radio" name="no" value="nee" />
+            <input type="radio" name="3" value="nee" />
             <label for="no">Nee</label>
           </div>
 
