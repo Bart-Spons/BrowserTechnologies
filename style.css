@@ -16,6 +16,10 @@
   border-color: red;
 } */
 
+h1 {
+  display: none;
+}
+
 .invalid {
   border: 2px solid red;
 }
@@ -36,5 +40,3 @@ input:user-invalid + span[data-error] {
   display: block;
   color: red;
 }
-
-
