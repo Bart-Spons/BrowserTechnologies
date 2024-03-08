@@ -42,6 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
 // e = event
 // functie om de volgende vraag te laten zien
 
+// Functie om de waarde van een veld te resetten 
+function resetvalue(e) {
+    const type = e.getAttribute('type');
+    if (type === 'radio') {
+        e.checked = e.id.includes('nee');
+    } else {
+        e.value = '';
+    }
+}
+
+// functie om de volgende vraag te laten zien
 const showNext = (e) => {
     // console.log({ e });
     // console.log(e.target.defaultValue);
@@ -72,6 +83,9 @@ const showNext = (e) => {
                 volgendeSectie.classList.remove('verborgen');
             } else if (e.target.defaultValue === 'nee') {
                 volgendeSectie.classList.add('verborgen');
+                // Reset de waarde van de velden
+                const input = volgendeSectie.querySelector('input, select, textarea');
+                resetvalue(input);
             }
 
         }
@@ -83,6 +97,8 @@ const showNext = (e) => {
     }
 
 }
+
+
 
 
 
@@ -110,15 +126,6 @@ function veldIsVolledigIngevuld(veld) {
     else return false;
 };
 
-// Functie om de waarde van een veld te resetten 
-function resetvalue(e) {
-    const type = e.getAttribute('type');
-    if (type === 'radio') {
-        e.checked = e.id.includes('nee');
-    } else {
-        e.value = '';
-    }
-}
 
 
 // Functie om te controleren of het formulier geldig is
