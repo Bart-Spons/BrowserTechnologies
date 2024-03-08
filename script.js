@@ -28,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // alle optionele verborgen maken
+    ///////////////////////////////////////////
+    // alle optionele vragen verborgen maken //
+    ///////////////////////////////////////////
+
     const optioneleVragen = document.querySelectorAll('.optioneel');
     // for loop om alle optionele vragen te verbergen
     optioneleVragen.forEach(vraag => {
@@ -50,7 +53,8 @@ const showNext = (e) => {
     // nested bevat meer optionele vragen (niet verplichte vragen)
     const isNested = huidigeSectie.getAttribute('data-id');
 
-    // console.log(isNested);
+    //Checken de vraag in de form nested is
+    console.log(isNested);
 
     // als er geen nested is, geen optionele vragen
     if (!isNested) return;
@@ -106,7 +110,7 @@ function veldIsVolledigIngevuld(veld) {
     else return false;
 };
 
-
+// Functie om de waarde van een veld te resetten 
 function resetvalue(e) {
     const type = e.getAttribute('type');
     if (type === 'radio') {
@@ -126,7 +130,6 @@ const validateForm = (form) => {
     console.log({ huidigForm });
     let formIsValid = true;
 
-
     // Loop door alle velden van het formulier
     for (let i = 0; i < alleVelden.length; i++) {
         const veld = alleVelden[i];
@@ -138,17 +141,15 @@ const validateForm = (form) => {
 
     if (formIsValid === null) return formIsValid;
 
-    // is het correct ingevuld
+    // Deze loop controleert of alle velden correct zijn ingevuld
     for (let i = 0; i < alleVelden.length; i++) {
         const veld = alleVelden[i];
         console.log('isIngevuld ' + veldIsVolledigIngevuld(veld));
 
-        
-
-
         if (!veld.checkValidity()) {
             // border wordt rood
             veld.classList.add('invalid'); // Voeg de 'invalid' klasse toe
+            // border was groen maar wordt nu rood
             veld.classList.remove('valid'); // Verwijder 'valid' als het veld ongeldig is
             formIsValid = false;
         } else {
@@ -196,8 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         });
     });
-
-
 
     // overlijdensdatum mag niet in de toekomst zijn
     // bron: https://www.w3schools.com/js/js_date_methods.asp
