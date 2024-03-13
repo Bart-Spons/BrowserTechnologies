@@ -40,3 +40,15 @@ input:user-invalid + span[data-error] {
   display: block;
   color: red;
 }
+
+/* fieldset:valid {
+  border-color: green;
+} */
+
+section {
+  display: none;
+}
+
+section:target {
+  display: block;
+}

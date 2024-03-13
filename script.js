@@ -1,6 +1,9 @@
 // Query voor alle formulier (als iedere form de class heeft)
 const formulieren = document.querySelectorAll('.formulier');
 
+  ///////////////////////////////////////////
+  // Alle formulieren verbergen //
+  ///////////////////////////////////////////
 
 // DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,10 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// e = event
-// functie om de volgende vraag te laten zien
 
-// Functie om de waarde van een veld te resetten 
+///////////////////////////////////////////////////
+// Functie om de waarde van een veld te resetten //
+///////////////////////////////////////////////////
+
 function resetvalue(e) {
     const type = e.getAttribute('type');
     if (type === 'radio') {
@@ -52,7 +56,11 @@ function resetvalue(e) {
     }
 }
 
-// functie om de volgende vraag te laten zien
+//////////////////////////////////////////////////////////////////////////
+// functie om de volgende vraag te laten zien                           //
+// Resetten van de optionele vragen als de gebruiker nee heeft ingevuld //
+//////////////////////////////////////////////////////////////////////////
+
 const showNext = (e) => {
     // console.log({ e });
     // console.log(e.target.defaultValue);
@@ -83,7 +91,7 @@ const showNext = (e) => {
                 volgendeSectie.classList.remove('verborgen');
             } else if (e.target.defaultValue === 'nee') {
                 volgendeSectie.classList.add('verborgen');
-                // Reset de waarde van de velden
+                // Reset alle waarden van de velden die in nested zitten
                 const input = volgendeSectie.querySelector('input, select, textarea');
                 resetvalue(input);
             }
@@ -98,29 +106,8 @@ const showNext = (e) => {
 
 }
 
-
-
-
-
-// const volgendeSectie = document.getElementById(volgendeId);
-// // als er geen volgende is
-// if (volgendeId === null) return;
-
-
-// let volgende = huidigeSectie.nextElementSibling;
-// while (volgende) {
-//     if (volgende.classList.contains('vraagContainer')) {
-//         volgende.classList.add('verborgen');
-//     }
-//     volgende = volgende.nextElementSibling;
-// }
-
-// if (volgendeSectie) {
-//     volgendeSectie.classList.remove('verborgen');
-// }
-
+// Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
 function veldIsVolledigIngevuld(veld) {
-    // Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
     console.log({ veld });
     if (veld.value.trim()) return true; // Verifieert of het veld ingevuld is
     else return false;
@@ -183,10 +170,12 @@ const nextForm = (huidigeForm) => {
 }
 
 
-
+/////////////////////////////////////////
 //form1 laten zien en form2 nog niet
 // volgende form button
 // werkt alleen bij de eerste form
+/////////////////////////////////////////
+
 document.addEventListener('DOMContentLoaded', function () {
     // Alle buttons heten volgendeBtn (class)
     document.querySelectorAll('.volgendeBtn').forEach(btn => {
@@ -266,17 +255,3 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 // });
 
-// toggle gebruiken om de velden leeg maken
-// 
-
-// Dit moet in de for loop
-// Meegeven aan HTML element
-
-// function resetvalue(e) {
-//     const type = e.getAttribute('type');
-//     if (type === 'radio') {
-//         e.checked = e.id.includes('nee');
-//     } else {
-//         e.value = '';
-//     }
-// }

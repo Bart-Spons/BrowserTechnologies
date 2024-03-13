@@ -21,7 +21,12 @@
       </nav>
       <section id="eersteSectie">
         <div class="vraagContainer">
-          <form id="form1" class="formulier">
+          <form
+            id="form1"
+            class="formulier"
+            method="post"
+            action="https://adactio.com/post"
+          >
             <fieldset>
               <legend>1a</legend>
               <label for="voorletters">*Voorletter(s):</label>
@@ -77,15 +82,21 @@
             data-next="form2"
           /> -->
             </fieldset>
+            <button type="submit">sturrr</button>
           </form>
 
-          <form id="form2" class="formulier">
+          <form
+            id="form2"
+            class="formulier"
+            method="post"
+            action="https://adactio.com/post"
+          >
             <fieldset>
               <legend>1b</legend>
               <!-- Nested betekend dat er meer inzit -->
               <div class="vraagContainer" data-id="nested">
                 <label
-                  >Was de overledene getrouwd of had de overledene een
+                  >*Was de overledene getrouwd of had de overledene een
                   geregistreerd partner op het moment van overlijden?
                 </label>
                 <br />
@@ -155,13 +166,14 @@
             data-next="form3"
           /> -->
             </fieldset>
+            <!-- <button type="submit">sturrr</button> -->
           </form>
 
           <form id="form3" class="formulier">
             <fieldset>
               <legend>1c</legend>
               <div class="vraagContainer" data-id="nested">
-                <label>Had de overledene kinderen?</label>
+                <label>*Had de overledene kinderen?</label>
                 <br />
                 <input type="radio" name="4" value="ja" required />
                 <label for="yes">Ja</label>
@@ -206,7 +218,7 @@
             <fieldset>
               <legend>1d</legend>
               <div class="vraagContainer" data-id="nested">
-                <label>Had de overledene een testament?</label>
+                <label>*Had de overledene een testament?</label>
                 <br />
                 <input type="radio" name="3" value="ja" />
                 <label for="yes">Ja</label>
@@ -224,7 +236,7 @@
                 />
                 <br />
 
-                <label for="voorletters">Tussenvoegsel(s):</label>
+                <label for="tussenvoegsel">Tussenvoegsel(s):</label>
                 <input
                   type="text"
                   id="tussenvoegselNotaris"
@@ -239,7 +251,7 @@
                   name="achternaamNotaris"
                 />
 
-                <label for="Vestigingsplaats">Vestigingsplaats:</label>
+                <label for="vestigingsplaats">Vestigingsplaats:</label>
                 <input
                   type="text"
                   id="vestigingsplaatsNotaris"
@@ -249,15 +261,26 @@
                 <label for="datumTestament">Datum:</label>
                 <input type="date" id="datumTestament" name="datumTestament" />
 
-                <label for="handtekening">handtekening</label>
-                <input type="file" id="handtekening" name="handtekening" />
+                <!-- <label for="handtekening">handtekening</label>
+                <input type="file" id="handtekening" name="handtekening" /> -->
               </div>
             </fieldset>
           </form>
         </div>
       </section>
 
-      <section id="tweedeSectie">2</section>
+      <section id="tweedeSectie">
+        <div class="vraagContainer">
+          <form id="form5" class="formulier">
+            <fieldset>
+              <legend>2a</legend>
+              <label for="rsin">Burgerservicenummer/ RSIN gemachtigde</label>
+              <input type="text" id="rsin" name="voorletters" required />
+              <br />
+            </fieldset>
+          </form>
+        </div>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>
