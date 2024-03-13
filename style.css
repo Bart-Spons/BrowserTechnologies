@@ -1,3 +1,6 @@
+body {
+  margin: 2rem;
+}
 /* .article1{
     display: none;
 }
@@ -8,16 +11,74 @@
   display: none;
 }
 
-/* :is(form, fieldset, label, input):has(:user-valid) {
+/* form,
+fieldset,
+label,
+input:has(:user-valid) {
   border-color: green;
+} */
+
+fieldset:user-invalid {
+  border-color: red;
 }
 
-*:has(:user-invalid) {
+fieldset:valid {
+  border: solid 2px green;
+}
+
+input:user-valid {
+  border: solid green 2px;
+}
+
+input:user-invalid:not(:placeholder-shown) {
+  border: solid red 2px;
+}
+
+html:has(form:first-of-type:invalid) ul li:first-of-type {
+  background-color: red;
+}
+
+html:has(
+    section:first-of-type
+      form:nth-of-type(1):valid
+      + form:nth-of-type(2):valid
+      + form:nth-of-type(3):valid
+      + form:nth-of-type(4):valid
+  )
+  ul
+  li:first-of-type {
+  background-color: green;
+}
+
+html:has(section:nth-of-type(2) form:nth-of-type(1):valid)
+  ul
+  li:nth-of-type(2) {
+  background-color: green;
+}
+
+/* *:has(:user-invalid) {
   border-color: red;
 } */
 
 h1 {
   display: none;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li {
+  padding: 1rem;
+  /* border: 2px solid black; */
+  background-color: blue;
+  color: white;
+  margin-right: 1em;
+}
+a {
+  color: white;
+  text-decoration: none;
 }
 
 .invalid {
@@ -36,7 +97,7 @@ span[data-error] {
   display: none;
 }
 
-input:user-invalid + span[data-error] {
+input:user-invalid:not(:placeholder-shown) + span[data-error] {
   display: block;
   color: red;
 }

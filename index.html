@@ -15,11 +15,14 @@
       <h1>Belastingsaangifte</h1>
       <nav>
         <ul>
-          <li><a href="#eersteSectie">Vraag1</a></li>
-          <li><a href="#tweedeSectie">Vraag2</a></li>
+          <li><a href="#eersteSectie">1</a></li>
+          <li><a href="#tweedeSectie">2</a></li>
+          <li><a href="#derdeSectie">3</a></li>
         </ul>
       </nav>
+
       <section id="eersteSectie">
+        <h2>Gegevens van de overledene</h2>
         <div class="vraagContainer">
           <form
             id="form1"
@@ -30,12 +33,20 @@
             <fieldset>
               <legend>1a</legend>
               <label for="voorletters">*Voorletter(s):</label>
-              <input type="text" id="voorletters" name="voorletters" required />
+              <input
+                type="text"
+                id="voorletters"
+                name="voorletters"
+                pattern="[A-Za-z\.]*"
+                placeholder=""
+                required
+              />
+              <span data-error>Voer uw voorletter(s) in </span>
               <br />
 
               <!-- Tussenvoegsel is niet verplicht -->
               <label for="tussenvoegsel">Tussenvoegsel:</label>
-              <input type="text" id="tussenvoegsel" name="tussenvoegsel" />
+              <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder=""/>
               <br />
 
               <label for="achternaam">*Achternaam:</label>
@@ -44,8 +55,10 @@
                 id="achternaam"
                 name="achternaam"
                 pattern="[A-Za-z\.]*"
+                placeholder=""
                 required
               />
+              <span data-error>Voer uw achternaam in </span>
               <br />
 
               <!-- Checken of het correct is -->
@@ -56,12 +69,14 @@
                 type="text"
                 id="burgerservicenummer"
                 name="burgerservicenummer"
+                minlength="8"
                 pattern="\d{9}"
                 title="BSM"
+                placeholder=""
                 required
               />
               <span data-error
-                >Vul een geldig BSN nummer in van 9 nummers
+                >Vul een geldig BSN nummer in van 8 of 9 nummers
               </span>
               <br />
 
@@ -82,7 +97,7 @@
             data-next="form2"
           /> -->
             </fieldset>
-            <button type="submit">sturrr</button>
+            <!-- <button type="submit">Stuur</button> -->
           </form>
 
           <form
@@ -267,9 +282,16 @@
             </fieldset>
           </form>
         </div>
+        <!-- <input
+          type="button"
+          value="Volgende"
+          class="volgendeBtn"
+          data-next="tweedeSectie"
+        /> -->
       </section>
 
       <section id="tweedeSectie">
+        <h2>Gegevens gemachtigde</h2>
         <div class="vraagContainer">
           <form id="form5" class="formulier">
             <fieldset>
@@ -281,6 +303,8 @@
           </form>
         </div>
       </section>
+
+      <section id="derdeSectie">3</section>
     </main>
     <script src="script.js"></script>
   </body>

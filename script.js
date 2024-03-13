@@ -1,9 +1,9 @@
 // Query voor alle formulier (als iedere form de class heeft)
 const formulieren = document.querySelectorAll('.formulier');
 
-  ///////////////////////////////////////////
-  // Alle formulieren verbergen //
-  ///////////////////////////////////////////
+///////////////////////////////////////////
+// Alle formulieren verbergen //
+///////////////////////////////////////////
 
 // DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // alle formulieren verbergen
     formulieren.forEach((formulier, index) => {
         // Het eerste formulier laten zien
-        if (index !== 0) {
+        if (index !== 0 && index !== 4) {
             formulier.classList.add('verborgen');
         }
         // Dynamische logica voor het tonen van vervolgsecties
@@ -187,10 +187,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isValid === null) return;
 
             if (isValid) {
-                nextForm(huidigForm);
+                const volgendeSectie = huidigForm.closest('.vraagContainer').nextElementSibling;
+                if (volgendeSectie) {
+                    volgendeSectie.scrollIntoView({ behavior: 'smooth' });
+                }
             }
-
-
         });
     });
 
@@ -205,6 +206,27 @@ document.addEventListener('DOMContentLoaded', function () {
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById("overlijdensdatum").setAttribute("max", today);
     document.getElementById("huwelijksdatum").setAttribute("max", today);
+
+    // Als de hele sectie is ingevuld moet de li groenkleuren die erbij hoort
+    // Als de hele sectie is ingevuld moet de li groenkleuren die erbij hoort
+    const sectie = document.querySelector('.eersteSectie');
+    const inputFields = sectie.querySelectorAll('input, select, textarea');
+    let isSectieIngevuld = true;
+
+    inputFields.forEach(field => {
+        if (!veldIsVolledigIngevuld(field)) {
+            isSectieIngevuld = false;
+            return;
+        }
+    });
+
+    if (isSectieIngevuld) {
+        const liElement = sectie.closest('li');
+        liElement.classList.add('groenkleuren');
+    } else {
+        const liElement = sectie.closest('li');
+        liElement.classList.remove('groenkleuren');
+    }
 
 });
 
@@ -255,3 +277,4 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 // });
 
+// De eerste form altijd weergeven
