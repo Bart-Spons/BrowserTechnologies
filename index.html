@@ -21,15 +21,14 @@
         </ul>
       </nav>
 
-      <section id="eersteSectie">
-        <h2>Gegevens van de overledene</h2>
-        <div class="vraagContainer">
-          <form
-            id="form1"
-            class="formulier"
-            method="post"
-            action="https://adactio.com/post"
-          >
+      <form method="post" action="https://adactio.com/post">
+        <!-- <section  class="nav"> -->
+        <!-- <h2>Gegevens van de overledene</h2> -->
+        <!-- heel vraag 1 -->
+        <fieldset class="vraagContainer" id="eersteSectie">
+          <legend>Gegevens van de overledene</legend>
+          <!-- vragen 1a -->
+          <div id="form1" class="formulier">
             <fieldset>
               <legend>1a</legend>
               <label for="voorletters">*Voorletter(s):</label>
@@ -105,10 +104,10 @@
             data-next="form2"
           /> -->
             </fieldset>
-            <button type="submit">Stuur</button>
-          </form>
+            <!-- <button type="submit">Stuur</button> -->
+          </div>
 
-          <form
+          <div
             id="form2"
             class="formulier"
             method="post"
@@ -199,9 +198,9 @@
           /> -->
             </fieldset>
             <!-- <button type="submit">sturrr</button> -->
-          </form>
+          </div>
 
-          <form id="form3" class="formulier" method="post">
+          <div id="form3" class="formulier" method="post">
             <fieldset>
               <legend>1c</legend>
               <div class="vraagContainer" data-id="nested">
@@ -244,9 +243,9 @@
             data-next="form4"
           /> -->
             </fieldset>
-          </form>
+          </div>
 
-          <form id="form4" class="formulier" method="post">
+          <div id="form4" class="formulier" method="post">
             <fieldset>
               <legend>1d</legend>
               <div class="vraagContainer" data-id="nested">
@@ -305,21 +304,22 @@
                 <input type="file" id="handtekening" name="handtekening" /> -->
               </div>
             </fieldset>
-          </form>
+          </div>
           <a href="#tweedeSectie" class="next">Volgende</a>
-        </div>
+        </fieldset>
         <!-- <input
           type="button"
           value="Volgende"
           class="volgendeBtn"
           data-next="tweedeSectie"
         /> -->
-      </section>
+        <!-- </section> -->
 
-      <section id="tweedeSectie">
-        <h2>Gegevens gemachtigde</h2>
-        <div class="vraagContainer">
-          <form id="form5" class="formulier">
+        <!-- <section id="tweedeSectie" class="nav"> -->
+        <!-- <h2>Gegevens gemachtigde</h2> -->
+        <fieldset class="vraagContainer" id="tweedeSectie">
+          <legend>Gegevens gemachtigde</legend>
+          <div id="form5" class="formulier">
             <fieldset>
               <legend>2a</legend>
               <label for="rsin">Burgerservicenummer/ RSIN gemachtigde</label>
@@ -336,18 +336,32 @@
                 <br
               />
             </fieldset>
-          </form>
-        </div>
-      </section>
+          </div>
+        </fieldset>
 
-      <section id="derdeSectie">
-        <h2>3</h2>
-        <div class="vraagContainer">
-          <form>
-            <!-- <button type="submit">stuur</button> -->
-          </form>
-        </div>
-      </section>
+        <section id="derdeSectie" class="nav">
+          <h2>3</h2>
+          <fieldset class="vraagContainer">
+            <div id="form6" class="formulier">
+              <fieldset>
+                <legend>3a</legend>
+
+                <!-- <label for="voorletters">Voorletter(s):</label>
+                <input
+                  type="text"
+                  id="voorletters1"
+                  name="voorletters"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                  required
+                />
+                <br /> -->
+              </fieldset>
+            </div>
+          </fieldset>
+        </section>
+        <button type="submit">stuur</button>
+      </form>
     </main>
     <script src="script.js"></script>
   </body>

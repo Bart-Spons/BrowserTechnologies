@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // alle formulieren verbergen
     formulieren.forEach((formulier, index) => {
         // Het eerste formulier laten zien
-        if (index !== 0 && index !== 4) {
+        if (index !== 0 && index !== 4 && index !== 6) {
             formulier.classList.add('verborgen');
         }
         // Dynamische logica voor het tonen van vervolgsecties
@@ -120,8 +120,8 @@ function veldIsVolledigIngevuld(veld) {
 
 // Functie om te controleren of het formulier geldig is
 // Als het formulier geldig is, ga dan naar het volgende formulier (wordt ingeladen)
-const validateForm = (form) => {
-    const huidigForm = form;
+const validateForm = (div) => {
+    const huidigForm = div;
     const alleVelden = huidigForm.querySelectorAll('input[required], input[pattern]');
     console.log({ alleVelden });
     console.log({ huidigForm });

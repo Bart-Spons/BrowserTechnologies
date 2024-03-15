@@ -26,6 +26,28 @@ fieldset:valid {
   border: solid 2px green;
 }
 
+.vraagContainer:nth-of-type(1):valid {
+  border: solid 2px purple;
+}
+
+/* eerste sectie */
+html:not(:has(fieldset:invalid)) ul li:first-of-type {
+  background-color: green;
+}
+
+html:not(:has(#eersteSectie:invalid)) ul li:first-of-type {
+  background-color: green;
+}
+
+/* eerste sectie */
+html:not(:has(fieldset:nth-of-type(2) fieldset:invalid)) ul li:nth-of-type(2) {
+  background-color: green;
+}
+
+/* .vraagContainer:valid {
+  border: solid 2px purple;
+} */
+
 input:user-valid {
   border: solid green 2px;
 }
@@ -46,8 +68,12 @@ input:user-invalid:not(:placeholder-shown) {
   background-color: green;
 } */
 
-/* html:has(form:first-of-type:invalid) ul li:first-of-type {
+/* html:has(.vraagContainer:invalid) ul li:first-of-type {
   background-color: red;
+} */
+
+/* html:has(.vraagContainer:valid) ul li:first-of-type {
+  background-color: purple;
 } */
 
 /* html:has(form:first-of-type:valid) ul li:first-of-type {
@@ -59,27 +85,46 @@ input:user-invalid:not(:placeholder-shown) {
   background-color: red;
 } */
 
-html:not(:has(section:first-of-type form:invalid)) ul li:first-of-type {
+/* html:(:has(section:first-of-type div:invalid)) ul li:first-of-type {
   background-color: green;
-}
+} */
 
 html:has(
     section:first-of-type
-      form:nth-of-type(1):valid
-      + form:nth-of-type(2):valid
-      + form:nth-of-type(3):valid
-      + form:nth-of-type(4):valid
+      div:nth-of-type(1):valid
+      + div:nth-of-type(2):valid
+      + div:nth-of-type(3):valid
+      + div:nth-of-type(4):valid
   )
   .next {
   background-color: green;
 }
 
-html:has(section:nth-of-type(2) form:nth-of-type(1):valid)
+html:has(
+    section:first-of-type
+      div:nth-of-type(1):valid
+      + div:nth-of-type(2):valid
+      + div:nth-of-type(3):valid
+      + div:nth-of-type(4):valid
+  )
+  ul
+  li:nth-of-type(1) {
+  background-color: purple;
+}
+
+/* html:has(section:nth-of-type(2) fieldset:nth-of-type(1):valid)
   ul
   li:nth-of-type(2) {
   background-color: green;
-  display: block;
-}
+
+} */
+
+/* html:has(section:nth-of-type(1) fieldset:nth-of-type(1):valid)
+  ul
+  li:nth-of-type(1) {
+  background-color: green;
+  /* display: block; 
+*/
 
 /* *:has(:user-invalid) {
   border-color: red;
@@ -131,10 +176,10 @@ input:user-invalid:not(:placeholder-shown) + span[data-error] {
   border-color: green;
 } */
 
-section {
+.vraagContainer {
   display: none;
 }
 
-section:target {
+.vraagContainer:target {
   display: block;
 }
