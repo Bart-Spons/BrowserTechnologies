@@ -44,9 +44,17 @@
               <span data-error>Voer uw voorletter(s) in </span>
               <br />
 
+              <!-- submit voor html error te checken -->
+
               <!-- Tussenvoegsel is niet verplicht -->
               <label for="tussenvoegsel">Tussenvoegsel:</label>
-              <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder=""/>
+              <input
+                type="text"
+                id="tussenvoegsel"
+                name="tussenvoegsel"
+                pattern="[A-Za-z\.]*"
+                placeholder=""
+              />
               <br />
 
               <label for="achternaam">*Achternaam:</label>
@@ -97,7 +105,7 @@
             data-next="form2"
           /> -->
             </fieldset>
-            <!-- <button type="submit">Stuur</button> -->
+            <button type="submit">Stuur</button>
           </form>
 
           <form
@@ -135,7 +143,16 @@
                   name="huwelijkseVoorwaarden"
                   value="ja"
                 />
-                <label for="huwVoorwaardenJa">Ja</label>
+                <label for="huwVoorwaardenJa">Ja, </label>
+                <label for="akteAangifte"
+                  >Stuur een kopie van de akte mee met de aangifte</label
+                >
+                <input
+                  type="file"
+                  accept="application/pdf"
+                  name="akteAangifte"
+                />
+
                 <br />
                 <input
                   type="radio"
@@ -184,7 +201,7 @@
             <!-- <button type="submit">sturrr</button> -->
           </form>
 
-          <form id="form3" class="formulier">
+          <form id="form3" class="formulier" method="post">
             <fieldset>
               <legend>1c</legend>
               <div class="vraagContainer" data-id="nested">
@@ -229,16 +246,16 @@
             </fieldset>
           </form>
 
-          <form id="form4" class="formulier">
+          <form id="form4" class="formulier" method="post">
             <fieldset>
               <legend>1d</legend>
               <div class="vraagContainer" data-id="nested">
                 <label>*Had de overledene een testament?</label>
                 <br />
-                <input type="radio" name="3" value="ja" />
+                <input type="radio" name="3" value="ja" required />
                 <label for="yes">Ja</label>
                 <br />
-                <input type="radio" name="3" value="nee" />
+                <input type="radio" name="3" value="nee" required />
                 <label for="no">Nee</label>
               </div>
 
@@ -248,6 +265,8 @@
                   type="text"
                   id="protocolnummerNotaris"
                   name="protocolnummerNotaris"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
                 />
                 <br />
 
@@ -256,6 +275,8 @@
                   type="text"
                   id="tussenvoegselNotaris"
                   name="tussenvoegselNotaris"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
                 />
                 <br />
 
@@ -264,6 +285,8 @@
                   type="text"
                   id="achternaamNotaris"
                   name="achternaamNotaris"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
                 />
 
                 <label for="vestigingsplaats">Vestigingsplaats:</label>
@@ -271,6 +294,8 @@
                   type="text"
                   id="vestigingsplaatsNotaris"
                   name="vestigingsplaatsNotaris"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
                 />
 
                 <label for="datumTestament">Datum:</label>
@@ -281,6 +306,7 @@
               </div>
             </fieldset>
           </form>
+          <a href="#tweedeSectie" class="next">Volgende</a>
         </div>
         <!-- <input
           type="button"
@@ -298,13 +324,30 @@
               <legend>2a</legend>
               <label for="rsin">Burgerservicenummer/ RSIN gemachtigde</label>
               <input type="text" id="rsin" name="voorletters" required />
-              <br />
+
+              <label for="voorletters">Voorletter(s):</label>
+              <input
+                type="text"
+                id="voorletterss"
+                name="voorletters"
+                pattern="[A-Za-z\.]*"
+                placeholder=""
+                required
+                <br
+              />
             </fieldset>
           </form>
         </div>
       </section>
 
-      <section id="derdeSectie">3</section>
+      <section id="derdeSectie">
+        <h2>3</h2>
+        <div class="vraagContainer">
+          <form>
+            <!-- <button type="submit">stuur</button> -->
+          </form>
+        </div>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>

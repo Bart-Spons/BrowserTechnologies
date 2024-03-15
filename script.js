@@ -92,8 +92,11 @@ const showNext = (e) => {
             } else if (e.target.defaultValue === 'nee') {
                 volgendeSectie.classList.add('verborgen');
                 // Reset alle waarden van de velden die in nested zitten
-                const input = volgendeSectie.querySelector('input, select, textarea');
-                resetvalue(input);
+                // reset alle waarden in de form
+                const inputFields = volgendeSectie.querySelectorAll('input, select, textarea');
+                inputFields.forEach(field => {
+                    resetvalue(field);
+                });
             }
 
         }
@@ -168,6 +171,27 @@ const nextForm = (huidigeForm) => {
     const volgendeForm = huidigeForm.nextElementSibling;
     volgendeForm.classList.remove('verborgen');
 }
+
+const inputName = document.getElementById('voorletters');
+
+inputName.addEventListener('input', function (e) {
+    // Voorkom het toevoegen van een punt na backspace of als er al een punt is
+    if (e.inputType === 'deleteContentBackward' || this.value.slice(-1) === '.') {
+        return;
+    }
+    let cleanValue = this.value.replace(/\./g, '').toUpperCase(); // Verwijder bestaande punten en converteer naar uppercase
+    let newValue = cleanValue.split('').join('.') + '.'; // Voeg een punt toe na elke letter
+    this.value = newValue;
+});
+
+
+
+
+// als de radiobutton ja in de eerste form is ingevuld, dan moeten de optionele vragen getoond worden
+// als deze zijn ingevuld dan pas de volgende form laten zien
+//maar als de radiobutton nee is ingevuld, dan moeten de optionele vragen niet getoond worden en kan de gebruiker door naar de volgende form
+
+
 
 
 /////////////////////////////////////////

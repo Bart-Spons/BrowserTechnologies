@@ -34,11 +34,7 @@ input:user-invalid:not(:placeholder-shown) {
   border: solid red 2px;
 }
 
-html:has(form:first-of-type:invalid) ul li:first-of-type {
-  background-color: red;
-}
-
-html:has(
+/* html:has(
     section:first-of-type
       form:nth-of-type(1):valid
       + form:nth-of-type(2):valid
@@ -48,12 +44,41 @@ html:has(
   ul
   li:first-of-type {
   background-color: green;
+} */
+
+/* html:has(form:first-of-type:invalid) ul li:first-of-type {
+  background-color: red;
+} */
+
+/* html:has(form:first-of-type:valid) ul li:first-of-type {
+  background-color: orange;
+} */
+
+/* user invalid -> error */
+/* html:has(section:first-of-type form:invalid) ul li:first-of-type {
+  background-color: red;
+} */
+
+html:not(:has(section:first-of-type form:invalid)) ul li:first-of-type {
+  background-color: green;
+}
+
+html:has(
+    section:first-of-type
+      form:nth-of-type(1):valid
+      + form:nth-of-type(2):valid
+      + form:nth-of-type(3):valid
+      + form:nth-of-type(4):valid
+  )
+  .next {
+  background-color: green;
 }
 
 html:has(section:nth-of-type(2) form:nth-of-type(1):valid)
   ul
   li:nth-of-type(2) {
   background-color: green;
+  display: block;
 }
 
 /* *:has(:user-invalid) {
