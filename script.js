@@ -125,18 +125,18 @@ const validateForm = (div) => {
     const alleVelden = huidigForm.querySelectorAll('input[required], input[pattern]');
     console.log({ alleVelden });
     console.log({ huidigForm });
-    let formIsValid = true;
+    let divIsValid = true;
 
     // Loop door alle velden van het formulier
     for (let i = 0; i < alleVelden.length; i++) {
         const veld = alleVelden[i];
         if (!veldIsVolledigIngevuld(veld)) {
 
-            formIsValid = null;
+            divIsValid = null;
         }
     }
 
-    if (formIsValid === null) return formIsValid;
+    if (divIsValid === null) return divIsValid;
 
     // Deze loop controleert of alle velden correct zijn ingevuld
     for (let i = 0; i < alleVelden.length; i++) {
@@ -157,7 +157,7 @@ const validateForm = (div) => {
         }
 
     };
-    return formIsValid;
+    return divIsValid;
 
     // Als het formulier helemaal is ingevuld
     // Dan gaat javascript checken of alles correct is ingevuld
@@ -302,3 +302,24 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 // De eerste form altijd weergeven
+
+function checkInputsAndDisableOthers() {
+    // Selecteer alleen de inputs binnen de div met ID 'form5'
+    const inputs = document.querySelectorAll('#form5 fieldset input[type="text"]');
+    const anyInputFilled = Array.from(inputs).some(input => input.value.trim() !== '');
+
+    inputs.forEach(input => {
+        if (anyInputFilled) {
+            if (input.value.trim() === '') {
+                input.disabled = true; // Disable empty inputs if any input is filled
+            }
+        } else {
+            input.disabled = false; // Enable all inputs if none are filled
+        }
+    });
+}
+
+// Voeg de event listener toe aan elke input binnen de specifieke div 'form5'
+document.querySelectorAll('#form5 fieldset input[type="text"]').forEach(input => {
+    input.addEventListener('input', checkInputsAndDisableOthers);
+});

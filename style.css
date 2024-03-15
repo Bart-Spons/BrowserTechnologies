@@ -44,6 +44,9 @@ html:not(:has(fieldset:nth-of-type(2) fieldset:invalid)) ul li:nth-of-type(2) {
   background-color: green;
 }
 
+html:not(:has(fieldset:nth-of-type(3) fieldset:invalid)) ul li:nth-of-type(3) {
+  background-color: green;
+}
 /* .vraagContainer:valid {
   border: solid 2px purple;
 } */
@@ -176,10 +179,30 @@ input:user-invalid:not(:placeholder-shown) + span[data-error] {
   border-color: green;
 } */
 
-.vraagContainer {
+/* .vraagContainer {
+  display: none;
+} */
+
+#eersteSectie {
   display: none;
 }
 
-.vraagContainer:target {
+#eersteSectie:target {
+  display: block;
+}
+
+#tweedeSectie {
+  display: none;
+}
+
+#tweedeSectie:target {
+  display: block;
+}
+
+#derdeSectie {
+  display: none;
+}
+
+#derdeSectie:target {
   display: block;
 }
