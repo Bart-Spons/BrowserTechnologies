@@ -29,7 +29,7 @@ header p {
 }
 
 main {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--achtergrondGrijs);
 }
 
@@ -66,12 +66,29 @@ fieldset {
   background-color: white;
   padding: 1rem;
   margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* margin-right: 10rem; */
+}
+
+.vraag {
+  background-color: whitesmoke;
+  /* margin-right: 60rem; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.group {
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+
+label {
 }
 
 input {
   margin: 0.5rem 0 0.5rem 0;
 }
-
 
 .verborgen {
   display: none;
@@ -310,6 +327,22 @@ html:has(#vijfdeSectie:target) {
   }
 }
 
+#buitenland {
+  display: none;
+}
+
+#nederland {
+  display: block;
+}
+
+html:has(input[name="adresInstelling"]:checked) #buitenland {
+  display: block;
+}
+
+html:has(input[name="adresInstelling"]:checked) #nederland {
+  display: none;
+}
+
 #tweedeSectie {
   display: none;
 }
@@ -344,6 +377,10 @@ html:has(#vijfdeSectie:target) {
 
 @media screen and (width < 600px) {
   input {
-    width: 100%;
+    /* width: 100%; */
+  }
+  label {
+    width: 10rem;
+    display: inline-block;
   }
 }
