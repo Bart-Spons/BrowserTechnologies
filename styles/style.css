@@ -1,12 +1,78 @@
-body {
-  margin: 2rem;
+:root {
+  --donkerBlauw: #01689b;
+  --hemelBlauw: #007bc7;
+  --lichtBlauw: #8fcae7;
+  --achtergrondGrijs: #eee;
 }
-/* .article1{
-    display: none;
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.article2{
-    display: none;
+
+header {
+  background-color: white;
+}
+
+header img {
+  width: 12rem; /* Breedte van de afbeelding */
+  height: auto; /* Behoudt de aspect ratio van de afbeelding */
+  margin: 0 auto; /* Centreert de afbeelding horizontaal */
+  display: block; /* Maakt het mogelijk om automatische marges effectief toe te passen */
+}
+
+header p {
+  background-color: var(--lichtBlauw);
+  padding: 2rem;
+}
+
+main {
+  padding: 2rem;
+  background-color: var(--achtergrondGrijs);
+}
+
+main nav {
+  margin-bottom: 1rem;
+}
+
+legend {
+  background-color: var(--hemelBlauw);
+  color: white;
+  padding: 1rem;
+}
+
+h2 {
+  /* border: none; */
+  /* padding: 1rem; */
+  margin-bottom: 1rem;
+}
+
+#start:checked {
+  display: none;
+}
+
+/* #start:checked #eersteSectie {
+  display: block;
 } */
+
+.vraagContainer p {
+  /* border: none; */
+  margin: 1rem 0 1rem 0;
+}
+
+fieldset {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+
 .verborgen {
   display: none;
 }
@@ -27,7 +93,11 @@ fieldset:valid {
 }
 
 .vraagContainer:nth-of-type(1):valid {
-  border: solid 2px purple;
+  border: solid 2px green;
+
+  & a {
+    background-color: blue;
+  }
 }
 
 /* eerste sectie */
@@ -112,7 +182,7 @@ html:has(
   )
   ul
   li:nth-of-type(1) {
-  background-color: purple;
+  background-color: green;
 }
 
 /* html:has(section:nth-of-type(2) fieldset:nth-of-type(1):valid)
@@ -145,7 +215,7 @@ ul {
 li {
   padding: 1rem;
   /* border: 2px solid black; */
-  background-color: blue;
+  background-color: var(--hemelBlauw);
   color: white;
   margin-right: 1em;
 }
@@ -191,6 +261,55 @@ input:user-invalid:not(:placeholder-shown) + span[data-error] {
   display: block;
 }
 
+ul {
+  display: none;
+}
+
+html:has(#eersteSectie:target) {
+  article {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+}
+
+html:has(#tweedeSectie:target) {
+  article {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+}
+
+html:has(#derdeSectie:target) {
+  article {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+}
+
+html:has(#vierdeSectie:target) {
+  article {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+}
+
+html:has(#vijfdeSectie:target) {
+  article {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+}
+
 #tweedeSectie {
   display: none;
 }
@@ -205,4 +324,26 @@ input:user-invalid:not(:placeholder-shown) + span[data-error] {
 
 #derdeSectie:target {
   display: block;
+}
+
+#vierdeSectie {
+  display: none;
+}
+
+#vierdeSectie:target {
+  display: block;
+}
+
+#vijfdeSectie {
+  display: none;
+}
+
+#vijfdeSectie:target {
+  display: block;
+}
+
+@media screen and (width < 600px) {
+  input {
+    width: 100%;
+  }
 }

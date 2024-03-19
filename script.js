@@ -17,16 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
             formulier.classList.add('verborgen');
         }
         // Dynamische logica voor het tonen van vervolgsecties
-        formulier.addEventListener('change', showNext);
-        formulier.addEventListener('change', () => {
+        formulier.addEventListener('change', (event) => {
+            makeRequired(formulier);
+
+            const showedSomething = showNext(event);
+
             const isValid = validateForm(formulier);
+
             if (isValid === null) return;
 
             if (isValid) {
                 // hij is valid, klopt
                 // moet er nog meer weergegeven worden?
                 // zo nee, dan ga naar het volgende formulier als de form valid is
-                nextForm(formulier);
+                if (!showedSomething) nextForm(formulier);
             }
         });
     });
@@ -76,10 +80,11 @@ const showNext = (e) => {
     console.log(isNested);
 
     // als er geen nested is, geen optionele vragen
-    if (!isNested) return;
-
+    if (!isNested) return false;
 
     let volgendeSectie = huidigeSectie.nextElementSibling;
+
+    let showedSomething = false;
 
     // Blijf de volgende sectie zoeken tot je een sectie vindt die niet optioneel is
     // of tot je geen volgende sectie meer hebt
@@ -89,6 +94,10 @@ const showNext = (e) => {
             // Doe de actie afhankelijk van de gebruikerskeuze
             if (e.target.defaultValue === 'ja') {
                 volgendeSectie.classList.remove('verborgen');
+                volgendeSectie.querySelectorAll('input').forEach(input => {
+                    if (input.type === "radio") input.required = true;
+                });
+                showedSomething = true;
             } else if (e.target.defaultValue === 'nee') {
                 volgendeSectie.classList.add('verborgen');
                 // Reset alle waarden van de velden die in nested zitten
@@ -107,13 +116,23 @@ const showNext = (e) => {
         volgendeSectie = volgendeSectie.nextElementSibling;
     }
 
+    return showedSomething;
 }
 
 // Deze functie controleert of alle vereiste velden van het formulier zijn ingevuld
 function veldIsVolledigIngevuld(veld) {
-    console.log({ veld });
-    if (veld.value.trim()) return true; // Verifieert of het veld ingevuld is
-    else return false;
+    // Hiermee word gecontroleerd of de gebruiker het veld kan zien zo niet markeren we het als ingevuld
+    if (veld.offsetParent === null) return true;
+
+    // Als de input een radio button is checken we of er een radio button is geselecteerd
+    if (veld.type === 'radio') {
+        const name = veld.name;
+        const buttons = document.querySelectorAll(`input[type="radio"][name="${name}"]`);
+        return Array.from(buttons).some(radio => radio.checked);
+    }
+
+    // Als het veld geen radio button is 
+    return veld.value.trim() !== '';
 };
 
 
@@ -317,6 +336,28 @@ function checkInputsAndDisableOthers() {
             input.disabled = false; // Enable all inputs if none are filled
         }
     });
+}
+
+function makeRequired(formulier) {
+    // Zoek de geselecteerde executeur
+    const executeur = formulier.querySelector('input[name="executeur"]:checked');
+
+    if (executeur) {
+        // Reset de oude inputs naar niet-verplicht en leeg
+        const inputs = formulier.querySelectorAll('input[type="text"], input[type="number"]');
+
+        inputs.forEach(input => {
+            input.required = false;
+            input.value = '';
+        });
+
+        // Maak de nieuwe input verplicht
+        const fileName = `${executeur.id}File`;
+        const fileInput = formulier.querySelector(`input[name="${fileName}"]`);
+        console.log(fileName);
+        console.log(fileInput);
+        fileInput.required = true;
+    }
 }
 
 // Voeg de event listener toe aan elke input binnen de specifieke div 'form5'

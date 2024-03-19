@@ -7,10 +7,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belastingsdienst</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/styleStart.css" />
+    <link rel="icon" href="./images/favicon-bld.ico" type="image/x-icon" />
   </head>
 
   <body>
+    <header>
+      <nav>
+        <img src="./images/bld_logo.svg" alt="Belastingdienst logo" />
+      </nav>
+      <p>Mijn Belastingdienst</p>
+      <!-- <p>Aangifte 2023 Erfbelasting</p> -->
+    </header>
+
     <main>
       <h1>Belastingsaangifte</h1>
       <nav>
@@ -28,7 +38,8 @@
         <!-- <h2>Gegevens van de overledene</h2> -->
         <!-- heel vraag 1 -->
         <fieldset class="vraagContainer" id="eersteSectie">
-          <legend>Gegevens van de overledene</legend>
+          <h2>Gegevens van de overledene</h2>
+          <p>Vul hier de gegevens in van de overledene.</p>
           <!-- vragen 1a -->
           <div id="form1" class="formulier">
             <fieldset>
@@ -109,12 +120,7 @@
             <!-- <button type="submit">Stuur</button> -->
           </div>
 
-          <div
-            id="form2"
-            class="formulier"
-            method="post"
-            action="https://adactio.com/post"
-          >
+          <div id="form2" class="formulier">
             <fieldset>
               <legend>1b</legend>
               <!-- Nested betekend dat er meer inzit -->
@@ -134,7 +140,7 @@
 
               <div class="vraagContainer optioneel">
                 <p>
-                  Hadden de overledene en diens echtgenoot of geregistreerd
+                  * Hadden de overledene en diens echtgenoot of geregistreerd
                   partner huwelijkse of partnerschapsvoorwaarden laten
                   vastleggen in een notariële akte?
                 </p>
@@ -166,7 +172,7 @@
 
               <div class="vraagContainer optioneel">
                 <p>
-                  Hadden de overledene en diens partner een finaal
+                  * Hadden de overledene en diens partner een finaal
                   verrekenbeding?
                 </p>
                 <!-- Verdere inputs -->
@@ -202,7 +208,7 @@
             <!-- <button type="submit">sturrr</button> -->
           </div>
 
-          <div id="form3" class="formulier" method="post">
+          <div id="form3" class="formulier">
             <fieldset>
               <legend>1c</legend>
               <div class="vraagContainer" data-id="nested">
@@ -217,7 +223,7 @@
 
               <div class="vraagContainer optioneel">
                 <label
-                  >Is 1 van deze kinderen eerder overleden dan de overledene
+                  >* Is 1 van deze kinderen eerder overleden dan de overledene
                   voor wie u nu aangifte doet?
                 </label>
                 <br />
@@ -230,7 +236,7 @@
               </div>
 
               <div class="vraagContainer optioneel">
-                <label>Had dit overleden kind zelf kinderen?</label>
+                <label>* Had dit overleden kind zelf kinderen?</label>
                 <br />
                 <input type="radio" name="32b" id="4yes" value="ja" />
                 <label for="yes">Ja</label>
@@ -247,7 +253,7 @@
             </fieldset>
           </div>
 
-          <div id="form4" class="formulier" method="post">
+          <div id="form4" class="formulier">
             <fieldset>
               <legend>1d</legend>
               <div class="vraagContainer" data-id="nested">
@@ -320,7 +326,14 @@
         <!-- <section id="tweedeSectie" class="nav"> -->
         <!-- <h2>Gegevens gemachtigde</h2> -->
         <fieldset class="vraagContainer" id="tweedeSectie">
-          <legend>Gegevens gemachtigde</legend>
+          <h2>Gegevens gemachtigde</h2>
+          <p>
+            Vul de gegevens van de gemachtigde in. De gemachtigde is degene die
+            namens 1 of meerdere personen en/of instellingen aangifte doet. Het
+            invullen van een telefoonnummer of e-mailadres is niet verplicht,
+            maar wel handig. Dan kunnen wij u makkelijker vragen stellen of
+            uitleg geven.
+          </p>
           <div id="form5" class="formulier">
             <fieldset>
               <p>
@@ -424,7 +437,9 @@
         </fieldset>
 
         <fieldset class="vraagContainer" id="derdeSectie">
-          <legend>Voor wie doet u aangifte?</legend>
+          <!-- <legend>Voor wie doet u aangifte?</legend> -->
+          <h2>Voor wie doet u aangifte?</h2>
+          <!-- <p>Vul hier de gegevens in van de overleden  e.</p> -->
           <div id="form7" class="formulier">
             <fieldset>
               <legend>3a</legend>
@@ -435,6 +450,7 @@
                 voor alle personen en/of instellingen die iets krijgen uit de
                 nalatenschap (verkrijgers).
               </p>
+
               <input type="radio" id="executeur" name="executeur" required />
               <label for="checkbox"
                 >Ik ben executeur en doe aangifte voor alle personen en/of
@@ -445,8 +461,8 @@
 
               <input
                 type="number"
-                id="executeurInput"
-                name="executeurInput"
+                id="executeurFile"
+                name="executeurFile"
                 min="1"
                 max="100"
               />
@@ -455,8 +471,8 @@
                 voor u geldt.
               </p>
 
-              <input type="radio" id="erfgenaam" name="erfgenaam" />
-              <label for="executeurNee"
+              <input type="radio" id="erfgenaamAlleen" name="executeur" />
+              <label for="erfgenaamAlleen"
                 >Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor
                 meerdere personen en/of instellingen die iets krijgen uit de
                 nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers u
@@ -464,8 +480,8 @@
               >
               <input
                 type="number"
-                id="erfgenaamInput"
-                name="erfgenaamInput"
+                id="erfgenaamAlleenFile"
+                name="erfgenaamAlleenFile"
                 min="1"
                 max="100"
               />
@@ -474,7 +490,7 @@
               <input
                 type="radio"
                 id="erfgenaamZelfAangifteSamen"
-                name="erfgenaam"
+                name="executeur"
               />
               <label for="erfgenaamZelfAangifteSamen"
                 >Ik ben erfgenaam en doe samen met andere erfgenamen aangifte.
@@ -483,27 +499,28 @@
               >
               <input
                 type="number"
-                id="erfgenaamInputAangifteSamen"
-                name="erfgenaamInputAangifteSamen"
+                id="erfgenaamZelfAangifteSamenFile"
+                name="erfgenaamZelfAangifteSamenFile"
                 min="1"
                 max="100"
                 <br
               /><br />
 
-              <input type="radio" id="erfgenaamZelf" name="erfgenaam" />
+              <input type="radio" id="erfgenaamZelf" name="executeur" />
               <label for="erfgenaamZelf"
                 >Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label
               >
+
               <br /><br />
-              <input type="radio" id="geenErfgenaam" name="geenErfgenaam" />
+              <input type="radio" id="geenErfgenaam" name="executeur" />
               <label for="geenErfgenaam"
                 >Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.
                 Geef aan voor hoeveel verkrijgers u aangifte doet.</label
               >
               <input
                 type="number"
-                id="geenErfgenaamInput"
-                name="geenErfgenaamInput"
+                id="geenErfgenaamFile"
+                name="geenErfgenaamFile"
                 min="1"
                 max="100"
               />
@@ -516,9 +533,26 @@
               <p>Zijn er verkrijgers voor wie u geen aangifte doet?</p>
             </fieldset>
           </div>
+          <button type="submit">stuur</button>
         </fieldset>
-        <button type="submit">stuur</button>
+
+        <fieldset class="vraagContainer" id="vierdeSectie"></fieldset>
+
+        <fieldset class="vraagContainer" id="vijfdeSectie"></fieldset>
       </form>
+
+      <article>
+        <h2>Welkom</h2>
+        <p>
+          Met dit formulier doet u aangifte voor de erfbelasting. U kunt
+          aangifte doen als u erfgenaam bent of als u gemachtigd bent om
+          aangifte te doen. U kunt ook aangifte doen als u executeur bent. U
+          doet aangifte voor de overledene en voor de verkrijgers. Verkrijgers
+          zijn de personen en/of instellingen die iets krijgen uit de
+          nalatenschap.
+        </p>
+        <a href="#eersteSectie">start</a>
+      </article>
     </main>
     <script src="script.js"></script>
   </body>

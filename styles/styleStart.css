@@ -1,0 +1,24 @@
+:root {
+  --donkerBlauw: #01689b;
+}
+
+article a {
+  background-color: var(--donkerBlauw);
+  color: white; /* Zorgt ervoor dat de tekst zichtbaar is tegen de blauwe achtergrond */
+  padding: 1rem;
+  /* margin: 0 auto; */
+  display: block;
+  width: max-content; /* De breedte past zich aan de inhoud aan */
+  text-align: center; /* Centreert de tekst binnen de link, indien nodig */
+  margin-top: 1rem;
+}
+
+article {
+  margin: 0 10rem 0 10rem;
+}
+
+@media screen and (width < 800px) {
+  article {
+    margin: 0;
+  }
+}
