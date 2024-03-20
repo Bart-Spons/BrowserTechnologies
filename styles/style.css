@@ -383,6 +383,42 @@ html:has(input[name="adresInstelling"]:checked) #nederland {
   display: none;
 }
 
+#zonderNotarieleAkteExtra {
+  display: none;
+}
+
+#metNotarieleAkteExtra {
+  display: none;
+}
+
+html:has(input[id="zonderNotarieleAkte"]:checked) #zonderNotarieleAkteExtra {
+  display: block;
+}
+
+html:has(input[id="metNotarieleAkte"]:checked) #metNotarieleAkteExtra {
+  display: block;
+}
+
+#vruchtGebruikExtra {
+  display: none;
+}
+
+#fieldsetBreuk {
+  display: inline;
+}
+
+html:has(input[id="jaVruchtGebruik"]:checked) #vruchtGebruikExtra {
+  display: grid;
+}
+
+#naamPartnerErfdeelFieldset {
+  display: none;
+}
+
+html:has(input[id="jaPartnerErfdeel"]:checked) #naamPartnerErfdeelFieldset {
+  display: grid;
+}
+
 @media screen and (width < 600px) {
   input {
     /* width: 100%; */

@@ -16,7 +16,7 @@ function initFormulieren() {
 
     formulieren.forEach((formulier, index) => {
         // Alleen specifieke formulieren tonen
-        if (![0, 1, 4, 5, 6, 7, 9, 10, 11, 12, 13].includes(index)) {
+        if (![0, 1, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14].includes(index)) {
             formulier.classList.add('verborgen');
         }
         formulier.addEventListener('change', (event) => handleFormChange(event, formulier));
@@ -103,5 +103,28 @@ function nextForm(huidigeForm) {
 
 
 
-// localStorage
+
+
+// sectie 4
+// als ik op radiobutton ja klik, dan moet de optionele vraag getoond worden
+// als ik op een andere radiobutton klik moet de optionele vraag verborgen worden
+// van form 14
+// sectie 4
+// als ik op radiobutton ja klik, dan moet de optionele vraag getoond worden
+// als ik op een andere radiobutton klik moet de optionele vraag verborgen worden, dit geld voor beide radiobuttons
+// van form 14<div id="form14" class="formulier">
+const form14 = document.getElementById('form14');
+const radiobuttons = form14.querySelectorAll('input[type="radio"]');
+radiobuttons.forEach(radiobutton => {
+    radiobutton.addEventListener('change', () => {
+        const optioneleVraag = form14.querySelector('.optioneel');
+        if (radiobutton.value === 'ja') {
+            optioneleVraag.classList.remove('verborgen');
+        } else {
+            optioneleVraag.classList.add('verborgen');
+        }
+    });
+});
+
+
 
