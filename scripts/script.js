@@ -16,7 +16,7 @@ function initFormulieren() {
 
     formulieren.forEach((formulier, index) => {
         // Alleen specifieke formulieren tonen
-        if (![0, 1, 4, 6, 7].includes(index)) {
+        if (![0, 1, 4, 5, 6, 11, 12].includes(index)) {
             formulier.classList.add('verborgen');
         }
         formulier.addEventListener('change', (event) => handleFormChange(event, formulier));
@@ -127,29 +127,4 @@ function makeRequired(formulier) {
 
 
 // localStorage
-
-const inputFields = document.querySelectorAll('input');
-inputFields.forEach(function (inputField) {
-    inputField.addEventListener("change", function () {
-        const value = inputField.value;
-        const key = 'dataSaved' + inputField.id; // Gebruik inputField.id in plaats van inputFields.id
-
-        localStorage.setItem(key, value);
-
-        // alert("Data opgeslagen");
-    })
-})
-
-window.addEventListener("load", function () {
-    inputFields.forEach(function (inputField) {
-        const key = 'dataSaved' + inputField.id;
-        const dataSaved = localStorage.getItem(key);
-        if (dataSaved !== null) {
-            inputField.value = dataSaved;
-            if (inputField.value === dataSaved) {
-                inputField.checked = true;
-            }
-        }
-    });
-})
 

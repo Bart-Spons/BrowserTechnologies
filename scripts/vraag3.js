@@ -23,3 +23,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecteer de radio buttons
+    var jaKnop = document.getElementById('ja3d');
+    var neeKnop = document.getElementById('nee3d');
+
+    // Selecteer form11
+    var form11 = document.getElementById('form11'); // Zorg ervoor dat dit het juiste ID is van form11
+
+    // Voeg een event listener toe aan de 'Ja' knop
+    jaKnop.addEventListener('change', function () {
+        if (this.checked) {
+            // Toon form11 als 'Ja' is geselecteerd
+            form11.style.display = 'block';
+        }
+    });
+
+    // Voeg een event listener toe aan de 'Nee' knop
+    neeKnop.addEventListener('change', function () {
+        if (this.checked) {
+            // Verberg form11 als 'Nee' is geselecteerd
+            form11.style.display = 'none';
+        }
+    });
+});

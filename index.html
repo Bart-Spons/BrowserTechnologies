@@ -44,7 +44,7 @@
           <div id="form1" class="formulier">
             <fieldset class="vraag">
               <legend>1a</legend>
-              <section class="group">
+              <section>
                 <label for="voorletters">*Voorletter(s):</label>
                 <input
                   type="text"
@@ -60,7 +60,7 @@
               <!-- submit voor html error te checken -->
 
               <!-- Tussenvoegsel is niet verplicht -->
-              <section class="group">
+              <section>
                 <label for="tussenvoegsel">Tussenvoegsel:</label>
                 <input
                   type="text"
@@ -70,7 +70,7 @@
                   placeholder=""
                 />
               </section>
-              <section class="group">
+              <section>
                 <label for="achternaam">*Achternaam:</label>
                 <input
                   type="text"
@@ -84,7 +84,7 @@
               </section>
 
               <!-- Checken of het correct is -->
-              <section class="group">
+              <section>
                 <label for="burgerservicenummer">*Burgerservicenummer:</label>
                 <!-- type: numeric -->
                 <!-- error als het te lang is -->
@@ -103,7 +103,7 @@
                 </span>
               </section>
 
-              <section class="group">
+              <section>
                 <!-- kan niet in de toekomst zijn -->
                 <label for="overlijdensdatum">*Overlijdensdatum:</label>
                 <input
@@ -133,12 +133,12 @@
                   >*Was de overledene getrouwd of had de overledene een
                   geregistreerd partner op het moment van overlijden?
                 </label>
-                <section class="group">
+                <section>
                   <input type="radio" name="21b" id="yes" value="ja" required />
                   <label for="yes">Ja</label>
                 </section>
 
-                <section class="group">
+                <section>
                   <input type="radio" name="21b" id="no" value="nee" required />
                   <label for="no">Nee</label>
                 </section>
@@ -150,27 +150,29 @@
                   partner huwelijkse of partnerschapsvoorwaarden laten
                   vastleggen in een notariële akte?
                 </p>
-                <section class="group">
+                <section>
                   <input
                     type="radio"
                     id="huwVoorwaardenJa"
                     name="huwelijkseVoorwaarden"
                     value="ja"
                   />
-                  <label for="huwVoorwaardenJa">Ja, </label>
-
-                  <label for="akteAangifte"
-                    >Stuur een kopie van de akte mee met de aangifte</label
+                  <label for="huwVoorwaardenJa"
+                    >Ja, Stuur een kopie van de akte mee met de aangifte</label
                   >
+
+                  <!-- <label for="akteAangifte"
+                    >Stuur een kopie van de akte mee met de aangifte</label
+                  > -->
                 </section>
-                <section class="group">
+                <section>
                   <input
                     type="file"
                     accept="application/pdf"
                     name="akteAangifte"
                   />
                 </section>
-                <section class="group">
+                <section>
                   <input
                     type="radio"
                     id="huwVoorwaardenNee"
@@ -188,7 +190,7 @@
                   verrekenbeding?
                 </p>
                 <!-- Verdere inputs -->
-                <section class="group">
+                <section>
                   <input
                     type="radio"
                     id="verrekenbedingJa"
@@ -197,7 +199,7 @@
                   />
                   <label for="verrekenbedingJa">Ja</label>
                 </section>
-                <section class="group">
+                <section>
                   <input
                     type="radio"
                     id="verrekenbedingNee"
@@ -228,12 +230,12 @@
               <legend>1c</legend>
               <div class="vraagContainer" data-id="nested">
                 <label>*Had de overledene kinderen?</label>
-                <section class="group">
+                <section>
                   <input type="radio" name="4" value="ja" required />
                   <label for="yes">Ja</label>
                 </section>
 
-                <section class="group">
+                <section>
                   <input type="radio" name="4" value="nee" required />
                   <label for="no">Nee</label>
                 </section>
@@ -245,12 +247,12 @@
                   voor wie u nu aangifte doet?
                 </label>
 
-                <section class="group">
+                <section>
                   <input type="radio" name="31b" id="3yes" value="ja" />
                   <label for="yes">Ja</label>
                 </section>
 
-                <section class="group">
+                <section>
                   <input type="radio" name="31b" id="3no" value="nee" />
                   <label for="no">Nee</label>
                 </section>
@@ -259,11 +261,11 @@
               <div class="vraagContainer optioneel">
                 <label>* Had dit overleden kind zelf kinderen?</label>
 
-                <section class="group">
+                <section>
                   <input type="radio" name="32b" id="4yes" value="ja" />
                   <label for="yes">Ja</label>
                 </section>
-                <section class="group">
+                <section>
                   <input type="radio" name="32b" id="4no" value="nee" />
                   <label for="no">Nee</label>
                 </section>
@@ -283,18 +285,18 @@
               <div class="vraagContainer" data-id="nested">
                 <label>*Had de overledene een testament?</label>
 
-                <section class="group">
+                <section>
                   <input type="radio" name="3" value="ja" required />
                   <label for="yes">Ja</label>
                 </section>
-                <section class="group">
+                <section>
                   <input type="radio" name="3" value="nee" required />
                   <label for="no">Nee</label>
                 </section>
               </div>
 
               <div class="vraagContainer optioneel">
-                <section class="group">
+                <section>
                   <label for="voorletters">Voorletter(s):</label>
                   <input
                     type="text"
@@ -305,7 +307,7 @@
                   />
                 </section>
 
-                <section class="group">
+                <section>
                   <label for="tussenvoegsel">Tussenvoegsel(s):</label>
                   <input
                     type="text"
@@ -316,7 +318,7 @@
                   />
                 </section>
 
-                <section class="group">
+                <section>
                   <label for="achternaam">Achternaam:</label>
                   <input
                     type="text"
@@ -327,8 +329,8 @@
                   />
                 </section>
 
-                <section class="group">
-                  <label for="vestigingsplaats">Vestigingsplaats:</label>
+                <section>
+                  <label for="vestigingsplaatsNotaris">Vestigingsplaats:</label>
                   <input
                     type="text"
                     id="vestigingsplaatsNotaris"
@@ -338,7 +340,7 @@
                   />
                 </section>
 
-                <section class="group">
+                <section>
                   <label for="datumTestament">Datum:</label>
                   <input
                     type="date"
@@ -375,13 +377,14 @@
           </p>
           <div id="form5" class="formulier">
             <fieldset class="vraag">
+              <legend>2a</legend>
               <p>
                 Vul 1 van de 3 in: het burgerservicenummer of RSIN van de
                 gemachtigde, het beconnummer van de adviseur of het
                 protocolnummer van de notaris.
               </p>
-              <legend>2a</legend>
-              <section class="group">
+
+              <section>
                 <label for="nummer"
                   >Burgerservicenummer/ RSIN gemachtigde</label
                 >
@@ -397,7 +400,7 @@
                   >Voer een geldig BSN nummer in van 8 of 9 nummers</span
                 >
               </section>
-              <section class="vraag">
+              <section>
                 <label for="beconnummerAdviseur">Beconnummer adviseur</label>
                 <input
                   type="text"
@@ -405,14 +408,13 @@
                   name="beconnummerAdviseur"
                   pattern="[0-9]*"
                   placeholder=""
-                  required
                 />
                 <span data-error
                   >Voer een geldig beconnummer in van 8 of 9 nummers</span
                 >
               </section>
 
-              <section class="vraag">
+              <section>
                 <label for="protocolnummerNotaris"
                   >Protocolnummer notaris</label
                 >
@@ -420,9 +422,7 @@
                   type="text"
                   id="protocolnummerNotarisGemachting"
                   name="protocolnummerNotaris"
-                  pattern="[0-9]*"
                   placeholder=""
-                  required
                 />
                 <span data-error
                   >Voer een geldig protocolnummer in van 8 of 9 nummers</span
@@ -435,263 +435,246 @@
               </details>
             </fieldset>
           </div>
-          <div id="form6" class="formulier"></div>
-          <fieldset class="vraag">
-            <legend>2b</legend>
-            <section class="vraag">
-              <label for="voorletters">Voorletter(s):</label>
-              <input
-                type="text"
-                id="voorletters1"
-                name="voorletters"
-                pattern="[A-Za-z\.]*"
-                placeholder=""
-                required
-              />
-              <span data-error>Voer uw voorletter(s) in </span>
-            </section>
 
-            <section class="vraag">
-              <label for="tussenvoegsel">Tussenvoegsel:</label>
-              <input
-                type="text"
-                id="tussenvoegsel1"
-                name="tussenvoegsel"
-                pattern="[A-Za-z\.]*"
-                placeholder=""
-              />
-            </section>
-
-            <section class="vraag">
-              <label for="achternaam">Achternaam gemachtigde:</label>
-              <input
-                type="text"
-                id="achternaam1"
-                name="achternaam"
-                pattern="[A-Za-z\.]*"
-                placeholder=""
-                required
-              />
-              <span data-error>Voer uw achternaam in </span>
-            </section>
-
-            <section class="vraag">
-              <label for="naamInstelling"
-                >Naam instelling (bijvoorbeeld een notariskantoor):</label
-              >
-              <input
-                type="text"
-                id="naamInstelling"
-                name="naamInstelling"
-                pattern="[A-Za-z\.]*"
-                placeholder=""
-                required
-              />
-              <span data-error>Voer de naam van de instelling in </span>
-            </section>
-            <!-- <h3>Adres in Nederland</h3> -->
-            <section class="group">
-              <input
-                type="checkbox"
-                id="adresInstelling"
-                name="adresInstelling"
-              />
-              <label name="adresIn"
-                >Adres in het buitenland? (klikt op de checkbox)</label
-              >
-            </section>
-
-            <section id="nederland">
-              <section>
-                <label for="straat">Straat:</label>
+          <div id="form6" class="formulier">
+            <fieldset class="vraag">
+              <legend>2b</legend>
+              <section class="vraag">
+                <label for="voorletters">Voorletter(s):</label>
                 <input
                   type="text"
-                  id="straat"
-                  name="straat"
+                  id="voorletters1"
+                  name="voorletters"
                   pattern="[A-Za-z\.]*"
                   placeholder=""
                   required
                 />
-                <span data-error>Voer de straatnaam in </span>
+                <span data-error>Voer uw voorletter(s) in </span>
               </section>
-              <section>
-                <label for="huisnummer">Huisnummer:</label>
+
+              <section class="vraag">
+                <label for="tussenvoegsel">Tussenvoegsel:</label>
                 <input
                   type="text"
-                  id="huisnummer"
-                  name="huisnummer"
-                  pattern="[0-9]*"
-                  placeholder=""
-                  required
-                />
-                <span data-error>Voer het huisnummer in </span>
-              </section>
-              <section>
-                <label for="toevoeging">Toevoeging:</label>
-                <input
-                  type="text"
-                  id="toevoeging"
-                  name="toevoeging"
-                  pattern="[A-Za-z]*"
+                  id="tussenvoegsel1"
+                  name="tussenvoegsel"
+                  pattern="[A-Za-z\.]*"
                   placeholder=""
                 />
               </section>
 
-              <section>
-                <label for="postcode">Postcode:</label>
+              <section class="vraag">
+                <label for="achternaam">Achternaam gemachtigde:</label>
                 <input
                   type="text"
-                  id="postcode"
-                  name="postcode"
-                  pattern="[0-9]{4}[A-Za-z]{2}"
-                  placeholder=""
-                  required
-                />
-                <span data-error>Voer een geldige postcode in (1234AB)</span>
-              </section>
-              <section class="group">
-                <label for="woonplaats">Woonplaats:</label>
-                <input
-                  type="text"
-                  id="woonplaats"
-                  name="woonplaats"
+                  id="achternaam1"
+                  name="achternaam"
                   pattern="[A-Za-z\.]*"
                   placeholder=""
                   required
                 />
-                <span data-error>Voer de woonplaats in </span>
+                <span data-error>Voer uw achternaam in </span>
               </section>
 
-              <section class="group">
-                <label for="landcode">Landcode:</label>
+              <section class="vraag">
+                <label for="naamInstelling"
+                  >Naam instelling (bijvoorbeeld een notariskantoor):</label
+                >
                 <input
                   type="text"
-                  id="landcode"
-                  name="landcode"
-                  pattern="[A-Za-z]{2}"
-                  placeholder="NLD"
-                  value="NLD"
-                  required
-                />
-              </section>
-
-              <section class="group">
-                <label for="telefoonnummer">Telefoonnummer:</label>
-                <input
-                  type="tel"
-                  id="telefoonnummer"
-                  name="telefoonnummer"
-                  pattern="[0-9]{10}"
-                  placeholder=""
-                />
-              </section>
-              <section class="group">
-                <label for="email">E-mailadres:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder=""
-                  required
-                />
-              </section>
-            </section>
-
-            <section id="buitenland">
-              <section>
-                <label for="straat">Straat:</label>
-                <input
-                  type="text"
-                  id="straatBuitenland"
-                  name="straat"
+                  id="naamInstelling"
+                  name="naamInstelling"
                   pattern="[A-Za-z\.]*"
                   placeholder=""
                   required
                 />
-                <span data-error>Voer de straatnaam in </span>
+                <span data-error>Voer de naam van de instelling in </span>
               </section>
+              <!-- <h3>Adres in Nederland</h3> -->
               <section>
-                <label for="huisnummer">Huisnummer:</label>
                 <input
-                  type="text"
-                  id="huisnummerBuitenland"
-                  name="huisnummer"
-                  pattern="[0-9]*"
-                  placeholder=""
-                  required
+                  type="checkbox"
+                  id="adresInstelling"
+                  name="adresInstelling"
                 />
-                <span data-error>Voer het huisnummer in </span>
-              </section>
-              <section>
-                <label for="toevoeging">Toevoeging:</label>
-                <input
-                  type="text"
-                  id="toevoegingBuitenaland"
-                  name="toevoeging"
-                  pattern="[A-Za-z]*"
-                  placeholder=""
-                />
+                <label for="adresInstelling"
+                  >Adres in het buitenland? (klikt op de checkbox)</label
+                >
               </section>
 
-              <section>
-                <label for="postcode">Postcode:</label>
-                <input
-                  type="text"
-                  id="postcodeBuitenland"
-                  name="postcode"
-                  pattern="[0-9]{4}[A-Za-z]{2}"
-                  placeholder=""
-                  required
-                />
-                <span data-error>Voer een geldige postcode in (1234AB)</span>
-              </section>
-              <section class="group">
-                <label for="woonplaats">Woonplaats:</label>
-                <input
-                  type="text"
-                  id="woonplaatsBuitenaland"
-                  name="woonplaats"
-                  pattern="[A-Za-z\.]*"
-                  placeholder=""
-                  required
-                />
-                <span data-error>Voer de woonplaats in </span>
+              <section id="nederland">
+                <section>
+                  <label for="straat">Straat:</label>
+                  <input
+                    type="text"
+                    id="straat"
+                    name="straat"
+                    pattern="[A-Za-z\.]*"
+                    placeholder=""
+                    required
+                  />
+                  <span data-error>Voer de straatnaam in </span>
+                </section>
+                <section>
+                  <label for="huisnummer">Huisnummer:</label>
+                  <input
+                    type="text"
+                    id="huisnummer"
+                    name="huisnummer"
+                    pattern="[0-9]*"
+                    placeholder=""
+                  />
+                  <span data-error>Voer het huisnummer in </span>
+                </section>
+                <section>
+                  <label for="toevoeging">Toevoeging:</label>
+                  <input
+                    type="text"
+                    id="toevoeging"
+                    name="toevoeging"
+                    pattern="[A-Za-z]*"
+                    placeholder=""
+                  />
+                </section>
+
+                <section>
+                  <label for="postcode">Postcode:</label>
+                  <input
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    pattern="[0-9]{4}[A-Za-z]{2}"
+                    placeholder=""
+                  />
+                  <span data-error>Voer een geldige postcode in (1234AB)</span>
+                </section>
+                <section>
+                  <label for="woonplaats">Woonplaats:</label>
+                  <input
+                    type="text"
+                    id="woonplaats"
+                    name="woonplaats"
+                    pattern="[A-Za-z\.]*"
+                    placeholder=""
+                  />
+                  <span data-error>Voer de woonplaats in </span>
+                </section>
+
+                <section>
+                  <label for="landcode">Landcode:</label>
+                  <input
+                    type="text"
+                    id="landcode"
+                    name="landcode"
+                    placeholder=""
+                  />
+                </section>
+
+                <section>
+                  <label for="telefoonnummer">Telefoonnummer:</label>
+                  <input
+                    type="tel"
+                    id="telefoonnummer"
+                    name="telefoonnummer"
+                    pattern="[0-9]{10}"
+                    placeholder=""
+                  />
+                </section>
+                <section>
+                  <label for="email">E-mailadres:</label>
+                  <input type="email" id="email" name="email" placeholder="" />
+                </section>
               </section>
 
-              <section class="group">
-                <label for="landcode">Landcode:</label>
-                <input
-                  type="text"
-                  id="landcodeBuitenland"
-                  name="landcode"
-                  pattern="[A-Za-z]{2}"
-                  placeholder=""
-                  required
-                />
-              </section>
+              <section id="buitenland">
+                <section>
+                  <label for="straat">Straat:</label>
+                  <input
+                    type="text"
+                    id="straatBuitenland"
+                    name="straat"
+                    pattern="[A-Za-z\.]*"
+                    placeholder=""
+                  />
+                  <span data-error>Voer de straatnaam in </span>
+                </section>
+                <section>
+                  <label for="huisnummer">Huisnummer:</label>
+                  <input
+                    type="text"
+                    id="huisnummerBuitenland"
+                    name="huisnummer"
+                    pattern="[0-9]*"
+                    placeholder=""
+                  />
+                  <span data-error>Voer het huisnummer in </span>
+                </section>
+                <section>
+                  <label for="toevoeging">Toevoeging:</label>
+                  <input
+                    type="text"
+                    id="toevoegingBuitenaland"
+                    name="toevoeging"
+                    pattern="[A-Za-z]*"
+                    placeholder=""
+                  />
+                </section>
 
-              <section class="group">
-                <label for="telefoonnummer">Telefoonnummer:</label>
-                <input
-                  type="tel"
-                  id="telefoonnummerBuitenland"
-                  name="telefoonnummer"
-                  pattern="[0-9]{10}"
-                  placeholder=""
-                />
+                <section>
+                  <label for="postcode">Postcode:</label>
+                  <input
+                    type="text"
+                    id="postcodeBuitenland"
+                    name="postcode"
+                    pattern="[0-9]{4}[A-Za-z]{2}"
+                    placeholder=""
+                  />
+                  <span data-error>Voer een geldige postcode in (1234AB)</span>
+                </section>
+                <section>
+                  <label for="woonplaats">Woonplaats:</label>
+                  <input
+                    type="text"
+                    id="woonplaatsBuitenaland"
+                    name="woonplaats"
+                    pattern="[A-Za-z\.]*"
+                    placeholder=""
+                  />
+                  <span data-error>Voer de woonplaats in </span>
+                </section>
+
+                <section>
+                  <label for="landcodeBuitenland">Landcode:</label>
+                  <input
+                    type="text"
+                    id="landcodeBuitenland"
+                    name="landcodeBuitenland"
+                    placeholder=""
+                  />
+                </section>
+
+                <section>
+                  <label for="telefoonnummer">Telefoonnummer:</label>
+                  <input
+                    type="tel"
+                    id="telefoonnummerBuitenland"
+                    name="telefoonnummer"
+                    pattern="[0-9]{10}"
+                    placeholder=""
+                  />
+                </section>
+                <section>
+                  <label for="email">E-mailadres:</label>
+                  <input
+                    type="email"
+                    id="emailBuitenland"
+                    name="email"
+                    placeholder=""
+                  />
+                </section>
               </section>
-              <section class="group">
-                <label for="email">E-mailadres:</label>
-                <input
-                  type="email"
-                  id="emailBuitenland"
-                  name="email"
-                  placeholder=""
-                  required
-                />
-              </section>
-            </section>
-          </fieldset>
+            </fieldset>
+          </div>
         </fieldset>
 
         <fieldset class="vraagContainer" id="derdeSectie">
@@ -708,9 +691,9 @@
                 voor alle personen en/of instellingen die iets krijgen uit de
                 nalatenschap (verkrijgers).
               </p>
-              <section class="group">
+              <section>
                 <input type="radio" id="executeur" name="executeur" />
-                <label for="checkbox"
+                <label for="executeur"
                   >Ik ben executeur en doe aangifte voor alle personen en/of
                   instellingen die iets krijgen uit de nalatenschap
                   (verkrijgers). Geef aan voor hoeveel verkrijgers u aangifte
@@ -718,7 +701,7 @@
                   mee.</label
                 >
               </section>
-              <section class="group">
+              <section>
                 <input
                   type="number"
                   id="executeurFile"
@@ -730,7 +713,7 @@
                 Is er geen executeur aangewezen? Kruis dan aan welke situatie
                 voor u geldt.
               </p>
-              <section class="group">
+              <section>
                 <input type="radio" id="erfgenaamAlleen" name="executeur" />
                 <label for="erfgenaamAlleen"
                   >Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor
@@ -739,7 +722,7 @@
                   u aangifte doet. Tel uzelf ook mee.</label
                 >
               </section>
-              <section class="group">
+              <section>
                 <input
                   type="number"
                   id="erfgenaamAlleenFile"
@@ -749,7 +732,7 @@
                 />
               </section>
 
-              <section class="group">
+              <section>
                 <input
                   type="radio"
                   id="erfgenaamZelfAangifteSamen"
@@ -762,7 +745,7 @@
                   mee</label
                 >
               </section>
-              <section class="group">
+              <section>
                 <input
                   type="number"
                   id="erfgenaamZelfAangifteSamenFile"
@@ -772,13 +755,13 @@
                 />
               </section>
 
-              <section class="group">
+              <section>
                 <input type="radio" id="erfgenaamZelf" name="executeur" />
                 <label for="erfgenaamZelf"
                   >Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label
                 >
               </section>
-              <section class="group">
+              <section>
                 <input type="radio" id="geenErfgenaam" name="executeur" />
                 <label for="geenErfgenaam"
                   >Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te
@@ -801,11 +784,11 @@
               <legend>3b</legend>
               <p>Zijn er verkrijgers voor wie u geen aangifte doet?</p>
               <div class="vraagContainer" data-id="nested">
-                <section class="group">
+                <section>
                   <input type="radio" id="ja" name="3b" value="ja" required />
                   <label for="ja">Ja</label>
                 </section>
-                <section class="group">
+                <section>
                   <input type="radio" id="nee" name="3b" value="nee" required />
                   <label for="nee">Nee</label>
                 </section>
@@ -821,7 +804,7 @@
 
                 <section id="verkrijger1">
                   <h3>Verkrijger 1</h3>
-                  <section for="group">
+                  <section>
                     <label for="bsn1">Burgerservicenummer/RSIN</label>
                     <input
                       type="text"
@@ -831,7 +814,7 @@
                       placeholder="Burgerservicenummer"
                     />
                   </section>
-                  <section for class="group">
+                  <section>
                     <label for="voorletters">Voorletter(s):</label>
                     <input
                       type="text"
@@ -841,7 +824,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section class="group">
+                  <section>
                     <label for="tussenvoegsel">Tussenvoegsel:</label>
                     <input
                       type="text"
@@ -851,7 +834,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section class="group">
+                  <section>
                     <label for="achternaam">Achternaam:</label>
                     <input
                       type="text"
@@ -862,38 +845,43 @@
                     />
                   </section>
 
-                  <section class="group">
-                    <label for="vermogenVerkrijger">
+                  <fieldset>
+                    <legend>
                       Krijgt deze verkrijger waarvoor u geen aangifte doet het
-                      hele vermogen?</label
+                      hele vermogen?
+                    </legend>
+
+                    <label for="vermogenVerkrijger1"
+                      ><input
+                        type="radio"
+                        id="vermogenVerkrijger1"
+                        name="vermogenVerkrijger1"
+                        value="ja"
+                      />
+                      Ja</label
                     >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c1"
-                      name="vermogenVerkrijger1"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c1"
-                      name="vermogenVerkrijger1"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                  <section for="group">
-                    <label for="verkrijgerBeroepPortie">
+
+                    <label for="nee3c1"
+                      ><input
+                        type="radio"
+                        id="nee3c1"
+                        name="vermogenVerkrijger1"
+                        value="nee"
+                      />
+                      Nee</label
+                    >
+                  </fieldset>
+
+                  <section>
+                    <label for="verkrijgerBeroepPortie1">
                       Doet deze verkrijger een beroep op diens legitieme portie
                       (wettelijke erfdeel)?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
-                      id="ja3c2"
+                      id="verkrijgerBeroepPortie1"
                       name="verkrijgerBeroepPortie1"
                       value="ja"
                     />
@@ -910,7 +898,7 @@
 
                 <section id="verkrijger2" class="hidden">
                   <h3>Verkrijger 2</h3>
-                  <section for="group">
+                  <section>
                     <label for="bsn2">BSN:</label>
                     <input
                       type="text"
@@ -920,7 +908,7 @@
                       placeholder="Burgerservicenummer"
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="voorletters">Voorletter(s):</label>
                     <input
                       type="text"
@@ -930,7 +918,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="tussenvoegsel">Tussenvoegsel:</label>
                     <input
                       type="text"
@@ -940,7 +928,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="achternaam">Achternaam:</label>
                     <input
                       type="text"
@@ -951,16 +939,16 @@
                     />
                   </section>
 
-                  <section for="group">
+                  <section>
                     <label for="vermogenVerkrijger2">
                       Krijgt deze verkrijger waarvoor u geen aangifte doet het
                       hele vermogen?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
-                      id="ja3c22"
+                      id="vermogenVerkrijger2"
                       name="vermogenVerkrijger2"
                       value="ja"
                     />
@@ -973,16 +961,16 @@
                     />
                     <label for="nee">Nee</label>
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="verkrijgerBeroepPortie2">
                       Doet deze verkrijger een beroep op diens legitieme portie
                       (wettelijke erfdeel)?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
-                      id="ja3c3"
+                      id="verkrijgerBeroepPortie2"
                       name="verkrijgerBeroepPortie2"
                       value="ja"
                     />
@@ -999,7 +987,7 @@
 
                 <section id="verkrijger3" class="hidden">
                   <h3>Verkrijger 3</h3>
-                  <section for="group">
+                  <section>
                     <label for="bsn3">BSN:</label>
                     <input
                       type="text"
@@ -1009,7 +997,7 @@
                       placeholder="Burgerservicenummer"
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="voorletters">Voorletter(s):</label>
                     <input
                       type="text"
@@ -1019,7 +1007,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="tussenvoegsel">Tussenvoegsel:</label>
                     <input
                       type="text"
@@ -1029,7 +1017,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="achternaam">Achternaam:</label>
                     <input
                       type="text"
@@ -1040,13 +1028,13 @@
                     />
                   </section>
 
-                  <section for="group">
+                  <section>
                     <label for="vermogenVerkrijger3">
                       Krijgt deze verkrijger waarvoor u geen aangifte doet het
                       hele vermogen?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
                       id="ja3c33"
@@ -1062,13 +1050,13 @@
                     />
                     <label for="nee">Nee</label>
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="verkrijgerBeroepPortie3">
                       Doet deze verkrijger een beroep op diens legitieme portie
                       (wettelijke erfdeel)?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
                       id="ja3c4"
@@ -1088,7 +1076,7 @@
 
                 <section id="verkrijger4" class="hidden">
                   <h3>Verkrijger 4</h3>
-                  <section for="group">
+                  <section>
                     <label for="bsn4">BSN:</label>
                     <input
                       type="text"
@@ -1098,7 +1086,7 @@
                       placeholder="Burgerservicenummer"
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="voorletters">Voorletter(s):</label>
                     <input
                       type="text"
@@ -1108,7 +1096,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="tussenvoegsel">Tussenvoegsel:</label>
                     <input
                       type="text"
@@ -1118,7 +1106,7 @@
                       placeholder=""
                     />
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="achternaam">Achternaam:</label>
                     <input
                       type="text"
@@ -1129,13 +1117,13 @@
                     />
                   </section>
 
-                  <section for="group">
+                  <section>
                     <label for="vermogenVerkrijger4">
                       Krijgt deze verkrijger waarvoor u geen aangifte doet het
                       hele vermogen?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
                       id="ja3c44"
@@ -1151,13 +1139,13 @@
                     />
                     <label for="nee">Nee</label>
                   </section>
-                  <section for="group">
+                  <section>
                     <label for="verkrijgerBeroepPortie4">
                       Doet deze verkrijger een beroep op diens legitieme portie
                       (wettelijke erfdeel)?</label
                     >
                   </section>
-                  <section class="group">
+                  <section>
                     <input
                       type="radio"
                       id="ja3c5"
@@ -1183,381 +1171,211 @@
             </fieldset>
           </div>
 
-          <!-- <div id="form9" class="formulier" optioneel>
-            <fieldset>
-              <legend>3b - vervolg</legend>
-              <p>
-                Vul hieronder de gegevens in van de verkrijgers waarvoor u geen
-                aangifte doet...
-              </p>
-              <div id="gebruikersContainer">
-                <section id="verkrijger1">
-                  <h3>Verkrijger 1</h3>
-                  <section for="group">
-                    <label for="bsn1">Burgerservicenummer/RSIN</label>
-                    <input
-                      type="text"
-                      id="bsn1"
-                      name="bsn1"
-                      pattern="[0-9]{8,9}"
-                      placeholder="Burgerservicenummer"
-                    />
-                  </section>
-                  <section for class="group">
-                    <label for="voorletters">Voorletter(s):</label>
-                    <input
-                      type="text"
-                      id="voorletters3c1"
-                      name="voorletters"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section class="group">
-                    <label for="tussenvoegsel">Tussenvoegsel:</label>
-                    <input
-                      type="text"
-                      id="tussenvoegsel3c1"
-                      name="tussenvoegsel"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section class="group">
-                    <label for="achternaam">Achternaam:</label>
-                    <input
-                      type="text"
-                      id="achternaam3c1"
-                      name="achternaam"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-
-                  <section class="group">
-                    <label for="vermogenVerkrijger">
-                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
-                      hele vermogen?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c1"
-                      name="vermogenVerkrijger1"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c1"
-                      name="vermogenVerkrijger1"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                  <section for="group">
-                    <label for="verkrijgerBeroepPortie">
-                      Doet deze verkrijger een beroep op diens legitieme portie
-                      (wettelijke erfdeel)?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c2"
-                      name="verkrijgerBeroepPortie1"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c2"
-                      name="verkrijgerBeroepPortie1"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                </section>
-
-                <section id="verkrijger2" class="hidden">
-                  <h3>Verkrijger 2</h3>
-                  <section for="group">
-                    <label for="bsn2">BSN:</label>
-                    <input
-                      type="text"
-                      id="bsn2"
-                      name="bsn2"
-                      pattern="[0-9]{8,9}"
-                      placeholder="Burgerservicenummer"
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="voorletters">Voorletter(s):</label>
-                    <input
-                      type="text"
-                      id="voorletters3c2"
-                      name="voorletters"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="tussenvoegsel">Tussenvoegsel:</label>
-                    <input
-                      type="text"
-                      id="tussenvoegsel3c2"
-                      name="tussenvoegsel"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="achternaam">Achternaam:</label>
-                    <input
-                      type="text"
-                      id="achternaam3c2"
-                      name="achternaam"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-
-                  <section for="group">
-                    <label for="vermogenVerkrijger2">
-                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
-                      hele vermogen?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c22"
-                      name="vermogenVerkrijger2"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c22"
-                      name="vermogenVerkrijger2"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                  <section for="group">
-                    <label for="verkrijgerBeroepPortie2">
-                      Doet deze verkrijger een beroep op diens legitieme portie
-                      (wettelijke erfdeel)?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c3"
-                      name="verkrijgerBeroepPortie2"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c3"
-                      name="verkrijgerBeroepPortie2"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                </section>
-
-                <section id="verkrijger3" class="hidden">
-                  <h3>Verkrijger 3</h3>
-                  <section for="group">
-                    <label for="bsn3">BSN:</label>
-                    <input
-                      type="text"
-                      id="bsn3"
-                      name="bsn3"
-                      pattern="[0-9]{8,9}"
-                      placeholder="Burgerservicenummer"
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="voorletters">Voorletter(s):</label>
-                    <input
-                      type="text"
-                      id="voorletters3c3"
-                      name="voorletters"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="tussenvoegsel">Tussenvoegsel:</label>
-                    <input
-                      type="text"
-                      id="tussenvoegsel3c3"
-                      name="tussenvoegsel"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="achternaam">Achternaam:</label>
-                    <input
-                      type="text"
-                      id="achternaam3c3"
-                      name="achternaam"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-
-                  <section for="group">
-                    <label for="vermogenVerkrijger3">
-                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
-                      hele vermogen?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c33"
-                      name="vermogenVerkrijger3"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c33"
-                      name="vermogenVerkrijger3"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                  <section for="group">
-                    <label for="verkrijgerBeroepPortie3">
-                      Doet deze verkrijger een beroep op diens legitieme portie
-                      (wettelijke erfdeel)?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c4"
-                      name="verkrijgerBeroepPortie3"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c4"
-                      name="verkrijgerBeroepPortie3"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                </section>
-
-                <section id="verkrijger4" class="hidden">
-                  <h3>Verkrijger 4</h3>
-                  <section for="group">
-                    <label for="bsn4">BSN:</label>
-                    <input
-                      type="text"
-                      id="bsn4"
-                      name="bsn4"
-                      pattern="[0-9]{8,9}"
-                      placeholder="Burgerservicenummer"
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="voorletters">Voorletter(s):</label>
-                    <input
-                      type="text"
-                      id="voorletters3c4"
-                      name="voorletters"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="tussenvoegsel">Tussenvoegsel:</label>
-                    <input
-                      type="text"
-                      id="tussenvoegsel3c4"
-                      name="tussenvoegsel"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-                  <section for="group">
-                    <label for="achternaam">Achternaam:</label>
-                    <input
-                      type="text"
-                      id="achternaam3c4"
-                      name="achternaam"
-                      pattern="[A-Za-z\.]*"
-                      placeholder=""
-                    />
-                  </section>
-
-                  <section for="group">
-                    <label for="vermogenVerkrijger4">
-                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
-                      hele vermogen?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c44"
-                      name="vermogenVerkrijger4"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c44"
-                      name="vermogenVerkrijger4"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                  <section for="group">
-                    <label for="verkrijgerBeroepPortie4">
-                      Doet deze verkrijger een beroep op diens legitieme portie
-                      (wettelijke erfdeel)?</label
-                    >
-                  </section>
-                  <section class="group">
-                    <input
-                      type="radio"
-                      id="ja3c5"
-                      name="verkrijgerBeroepPortie4"
-                      value="ja"
-                    />
-                    <label for="ja">Ja</label>
-                    <input
-                      type="radio"
-                      id="nee3c5"
-                      name="verkrijgerBeroepPortie4"
-                      value="nee"
-                    />
-                    <label for="nee">Nee</label>
-                  </section>
-                </section>
-              </div>
-              <button type="button" id="voegVerkrijgerToe">
-                Voeg verkrijger toe (+)
-              </button>
+          <div id="form9" class="formulier">
+            <fieldset class="vraag">
+              <legend>3c</legend>
+              <p>Naar wie wilt u dat wij de aanslag erfbelasting sturen?</p>
+              <section>
+                <input type="radio" id="deelVerkrijger" name="deelVerkrijger" />
+                <label for="deelVerkrijger"
+                  >Stuur naar iedere verkrijger van (een deel van) de erfenis
+                  een eigen belastingaanslag.</label
+                >
+              </section>
+              <section>
+                <input type="radio" id="deelErfgenaam" name="deelVerkrijger" />
+                <label for="deelErfgenaam"
+                  >Stuur de belastingaanslag(en) naar de executeur of naar de
+                  erfgenaam die ook namens andere personen en/of instellingen
+                  die iets krijgen uit de nalatenschap (verkrijgers) aangifte
+                  heeft gedaan; dit mag ook de gemachtigde zijn. Wij sturen de
+                  aanslag(en) naar het adres dat u bij vraag 2 hebt
+                  ingevuld.</label
+                >
+              </section>
             </fieldset>
-          </div> -->
+          </div>
 
-          <fieldset class="vraagContainer" id="vierdeSectie">
-            <button type="submit">stuur</button>
-          </fieldset>
+          <div id="form10" class="formulier">
+            <fieldset class="vraag">
+              <legend>3d</legend>
+              <p>Ondertekening door executeur of gemachtigde</p>
+              <p>Bent u executeur of gemachtigde?</p>
+              <section>
+                <input type="radio" id="ja3d" name="3d" value="ja" required />
+                <label for="ja3d">Ja</label>
+              </section>
+              <section>
+                <input type="radio" id="nee3d" name="3d" value="nee" required />
+                <label for="nee3d">Nee</label>
+              </section>
+            </fieldset>
+          </div>
 
-          <fieldset class="vraagContainer" id="vijfdeSectie"></fieldset>
+          <div id="form11" class="formulier">
+            <fieldset class="vraag">
+              <legend>3e</legend>
+              <p>Gegevens van de executeur of gemachtigde</p>
+              <p>Vul hieronder uw gegevens in.</p>
+              <section>
+                <label for="bsn">Burgerservicenummer/RSIN</label>
+                <input
+                  type="text"
+                  id="bsn"
+                  name="bsn"
+                  pattern="[0-9]{8,9}"
+                  placeholder="Burgerservicenummer"
+                />
+              </section>
+              <section>
+                <label for="protocolnummer"
+                  >Protocolnummer (als de executeur ook notaris is)</label
+                >
+                <input type="text" id="protocolnummer" name="protocolnummer" />
+              </section>
+              <section>
+                <label for="beconnummerAdviseur2"
+                  >Beconnummer van de adviseur</label
+                >
+                <input
+                  type="text"
+                  id="beconnummerAdviseur2"
+                  name="beconnummerAdviseur2"
+                  pattern="[0-9]{8,9}"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="voorletters">Voorletter(s):</label>
+                <input
+                  type="text"
+                  id="voorletters2"
+                  name="voorletters"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="tussenvoegsel">Tussenvoegsel:</label>
+                <input
+                  type="text"
+                  id="tussenvoegsel2"
+                  name="tussenvoegsel"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="achternaam">Achternaam:</label>
+                <input
+                  type="text"
+                  id="achternaam2"
+                  name="achternaam"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="naamInstelling2"
+                  >Naam instelling (bijvoorbeeld een notariskantoor):</label
+                >
+                <input
+                  type="text"
+                  id="naamInstelling2"
+                  name="naamInstelling"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="straat">Straat:</label>
+                <input
+                  type="text"
+                  id="straat2"
+                  name="straat"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="huisnummer">Huisnummer:</label>
+                <input
+                  type="text"
+                  id="huisnummer2"
+                  name="huisnummer"
+                  pattern="[0-9]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="toevoeging">Toevoeging:</label>
+                <input
+                  type="text"
+                  id="toevoeging2"
+                  name="toevoeging"
+                  pattern="[A-Za-z]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="postcode">Postcode:</label>
+                <input
+                  type="text"
+                  id="postcode2"
+                  name="postcode"
+                  pattern="[0-9]{4}[A-Za-z]{2}"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="woonplaats">Woonplaats:</label>
+                <input
+                  type="text"
+                  id="woonplaats2"
+                  name="woonplaats"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                />
+              </section>
+              <section>
+                <label for="datum"> Datum</label>
+                <input type="date" id="datum" name="datum" />
+              </section>
+              <section>
+                <label for="handtekening">Dandtekening</label>
+                <input
+                  type="file"
+                  id="handtekening"
+                  name="handtekening"
+                  accept="image/png, image/jpeg"
+                />
+              </section>
+            </fieldset>
+          </div>
+        </fieldset>
+
+        <fieldset class="vraagContainer" id="vierdeSectie">
+          <h2>Gegevens verkrijgers</h2>
+          <div id="form12" class="formulier">
+            <fieldset class="vraag">
+              <legend>4a</legend>
+              <p>Vul de gegevens in van de persoon of instelling.</p>
+              <section>
+                <label for="bsn">Burgerservicenummer/RSIN</label>
+                <input
+                  type="text"
+                  id="bsnPersoon"
+                  name="bsn"
+                  pattern="[0-9]{8,9}"
+                  placeholder="Burgerservicenummer"
+                />
+              </section>
+            </fieldset>
+          </div>
+        </fieldset>
+
+        <fieldset class="vraagContainer" id="vijfdeSectie">
+          <button type="submit">stuur</button>
         </fieldset>
       </form>
 
