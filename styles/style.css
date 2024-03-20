@@ -388,7 +388,7 @@ html:has(input[name="adresInstelling"]:checked) #nederland {
     /* width: 100%; */
   }
   label {
-    width: 10rem;
+    width: 8rem;
     display: inline-block;
   }
 }

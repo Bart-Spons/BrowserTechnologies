@@ -16,7 +16,7 @@ function initFormulieren() {
 
     formulieren.forEach((formulier, index) => {
         // Alleen specifieke formulieren tonen
-        if (![0, 1, 4, 5, 6, 11, 12].includes(index)) {
+        if (![0, 1, 4, 5, 6, 7, 9, 10, 11, 12, 13].includes(index)) {
             formulier.classList.add('verborgen');
         }
         formulier.addEventListener('change', (event) => handleFormChange(event, formulier));
@@ -98,32 +98,9 @@ function nextForm(huidigeForm) {
 }
 
 // Checken het veld is ingevuld (voor de submit)
-// vraag 3
-function veldIsVolledigIngevuld(veld) {
-    if (veld.offsetParent === null) return true;
-    if (veld.type === 'radio') {
-        return document.querySelector(`input[type="radio"][name="${veld.name}"]:checked`) !== null;
-    }
-    return veld.value.trim() !== '';
-}
 
-// Als de executeur is gekozen, dan moet de file input verplicht worden
-// vraag 3
-function makeRequired(formulier) {
-    const executeur = formulier.querySelector('input[name="executeur"]:checked');
-    // Verwijder eerst de required status van alle velden.
-    const inputs = formulier.querySelectorAll('input[type="text"], input[type="number"]');
-    inputs.forEach(input => {
-        input.required = false;
-    });
 
-    if (executeur) {
-        // Stel alleen het relevante file input veld in als verplicht, zonder andere velden te resetten.
-        const fileName = `${executeur.id}File`;
-        const fileInput = formulier.querySelector(`input[name="${fileName}"]`);
-        if (fileInput) fileInput.required = true;
-    }
-}
+
 
 
 // localStorage
