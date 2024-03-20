@@ -375,6 +375,14 @@ html:has(input[name="adresInstelling"]:checked) #nederland {
   display: block;
 }
 
+.verkrijger:not(:first-child) {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (width < 600px) {
   input {
     /* width: 100%; */

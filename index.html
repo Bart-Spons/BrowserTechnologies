@@ -54,7 +54,7 @@
                   placeholder=""
                   required
                 />
-                <span data-error>Voer uw voorletter(s) in </span>
+                <span data-error>&#9888; Voer uw voorletter(s) in </span>
               </section>
 
               <!-- submit voor html error te checken -->
@@ -489,7 +489,7 @@
               />
               <span data-error>Voer de naam van de instelling in </span>
             </section>
-
+            <!-- <h3>Adres in Nederland</h3> -->
             <section class="group">
               <input
                 type="checkbox"
@@ -501,9 +501,196 @@
               >
             </section>
 
-            <section class="group" id="nederland">test 1</section>
+            <section id="nederland">
+              <section>
+                <label for="straat">Straat:</label>
+                <input
+                  type="text"
+                  id="straat"
+                  name="straat"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer de straatnaam in </span>
+              </section>
+              <section>
+                <label for="huisnummer">Huisnummer:</label>
+                <input
+                  type="text"
+                  id="huisnummer"
+                  name="huisnummer"
+                  pattern="[0-9]*"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer het huisnummer in </span>
+              </section>
+              <section>
+                <label for="toevoeging">Toevoeging:</label>
+                <input
+                  type="text"
+                  id="toevoeging"
+                  name="toevoeging"
+                  pattern="[A-Za-z]*"
+                  placeholder=""
+                />
+              </section>
 
-            <section class="group" id="buitenland">test 2</section>
+              <section>
+                <label for="postcode">Postcode:</label>
+                <input
+                  type="text"
+                  id="postcode"
+                  name="postcode"
+                  pattern="[0-9]{4}[A-Za-z]{2}"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer een geldige postcode in (1234AB)</span>
+              </section>
+              <section class="group">
+                <label for="woonplaats">Woonplaats:</label>
+                <input
+                  type="text"
+                  id="woonplaats"
+                  name="woonplaats"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer de woonplaats in </span>
+              </section>
+
+              <section class="group">
+                <label for="landcode">Landcode:</label>
+                <input
+                  type="text"
+                  id="landcode"
+                  name="landcode"
+                  pattern="[A-Za-z]{2}"
+                  placeholder="NLD"
+                  value="NLD"
+                  required
+                />
+              </section>
+
+              <section class="group">
+                <label for="telefoonnummer">Telefoonnummer:</label>
+                <input
+                  type="tel"
+                  id="telefoonnummer"
+                  name="telefoonnummer"
+                  pattern="[0-9]{10}"
+                  placeholder=""
+                />
+              </section>
+              <section class="group">
+                <label for="email">E-mailadres:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder=""
+                  required
+                />
+              </section>
+            </section>
+
+            <section id="buitenland">
+              <section>
+                <label for="straat">Straat:</label>
+                <input
+                  type="text"
+                  id="straatBuitenland"
+                  name="straat"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer de straatnaam in </span>
+              </section>
+              <section>
+                <label for="huisnummer">Huisnummer:</label>
+                <input
+                  type="text"
+                  id="huisnummerBuitenland"
+                  name="huisnummer"
+                  pattern="[0-9]*"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer het huisnummer in </span>
+              </section>
+              <section>
+                <label for="toevoeging">Toevoeging:</label>
+                <input
+                  type="text"
+                  id="toevoegingBuitenaland"
+                  name="toevoeging"
+                  pattern="[A-Za-z]*"
+                  placeholder=""
+                />
+              </section>
+
+              <section>
+                <label for="postcode">Postcode:</label>
+                <input
+                  type="text"
+                  id="postcodeBuitenland"
+                  name="postcode"
+                  pattern="[0-9]{4}[A-Za-z]{2}"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer een geldige postcode in (1234AB)</span>
+              </section>
+              <section class="group">
+                <label for="woonplaats">Woonplaats:</label>
+                <input
+                  type="text"
+                  id="woonplaatsBuitenaland"
+                  name="woonplaats"
+                  pattern="[A-Za-z\.]*"
+                  placeholder=""
+                  required
+                />
+                <span data-error>Voer de woonplaats in </span>
+              </section>
+
+              <section class="group">
+                <label for="landcode">Landcode:</label>
+                <input
+                  type="text"
+                  id="landcodeBuitenland"
+                  name="landcode"
+                  pattern="[A-Za-z]{2}"
+                  placeholder=""
+                  required
+                />
+              </section>
+
+              <section class="group">
+                <label for="telefoonnummer">Telefoonnummer:</label>
+                <input
+                  type="tel"
+                  id="telefoonnummerBuitenland"
+                  name="telefoonnummer"
+                  pattern="[0-9]{10}"
+                  placeholder=""
+                />
+              </section>
+              <section class="group">
+                <label for="email">E-mailadres:</label>
+                <input
+                  type="email"
+                  id="emailBuitenland"
+                  name="email"
+                  placeholder=""
+                  required
+                />
+              </section>
+            </section>
           </fieldset>
         </fieldset>
 
@@ -610,17 +797,768 @@
           </div>
 
           <div id="form8" class="formulier">
-            <fieldset>
+            <fieldset class="vraag">
               <legend>3b</legend>
               <p>Zijn er verkrijgers voor wie u geen aangifte doet?</p>
+              <div class="vraagContainer" data-id="nested">
+                <section class="group">
+                  <input type="radio" id="ja" name="3b" value="ja" required />
+                  <label for="ja">Ja</label>
+                </section>
+                <section class="group">
+                  <input type="radio" id="nee" name="3b" value="nee" required />
+                  <label for="nee">Nee</label>
+                </section>
+              </div>
+
+              <div class="vraagContainer optioneel">
+                <!-- <fieldset>
+                  <legend>3b - vervolg</legend> -->
+                <p>
+                  Vul hieronder de gegevens in van de verkrijgers waarvoor u
+                  geen aangifte doet...
+                </p>
+
+                <section id="verkrijger1">
+                  <h3>Verkrijger 1</h3>
+                  <section for="group">
+                    <label for="bsn1">Burgerservicenummer/RSIN</label>
+                    <input
+                      type="text"
+                      id="bsn1"
+                      name="bsn1"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for class="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c1"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section class="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c1"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section class="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c1"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section class="group">
+                    <label for="vermogenVerkrijger">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c1"
+                      name="vermogenVerkrijger1"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c1"
+                      name="vermogenVerkrijger1"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c2"
+                      name="verkrijgerBeroepPortie1"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c2"
+                      name="verkrijgerBeroepPortie1"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <section id="verkrijger2" class="hidden">
+                  <h3>Verkrijger 2</h3>
+                  <section for="group">
+                    <label for="bsn2">BSN:</label>
+                    <input
+                      type="text"
+                      id="bsn2"
+                      name="bsn2"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c2"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c2"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c2"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section for="group">
+                    <label for="vermogenVerkrijger2">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c22"
+                      name="vermogenVerkrijger2"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c22"
+                      name="vermogenVerkrijger2"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie2">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c3"
+                      name="verkrijgerBeroepPortie2"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c3"
+                      name="verkrijgerBeroepPortie2"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <section id="verkrijger3" class="hidden">
+                  <h3>Verkrijger 3</h3>
+                  <section for="group">
+                    <label for="bsn3">BSN:</label>
+                    <input
+                      type="text"
+                      id="bsn3"
+                      name="bsn3"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c3"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c3"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c3"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section for="group">
+                    <label for="vermogenVerkrijger3">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c33"
+                      name="vermogenVerkrijger3"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c33"
+                      name="vermogenVerkrijger3"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie3">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c4"
+                      name="verkrijgerBeroepPortie3"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c4"
+                      name="verkrijgerBeroepPortie3"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <section id="verkrijger4" class="hidden">
+                  <h3>Verkrijger 4</h3>
+                  <section for="group">
+                    <label for="bsn4">BSN:</label>
+                    <input
+                      type="text"
+                      id="bsn4"
+                      name="bsn4"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c4"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c4"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c4"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section for="group">
+                    <label for="vermogenVerkrijger4">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c44"
+                      name="vermogenVerkrijger4"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c44"
+                      name="vermogenVerkrijger4"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie4">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c5"
+                      name="verkrijgerBeroepPortie4"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c5"
+                      name="verkrijgerBeroepPortie4"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <button type="button" id="voegVerkrijgerToe">
+                  Voeg verkrijger toe (+)
+                </button>
+                <!-- </fieldset> -->
+              </div>
             </fieldset>
           </div>
-          <button type="submit">stuur</button>
+
+          <!-- <div id="form9" class="formulier" optioneel>
+            <fieldset>
+              <legend>3b - vervolg</legend>
+              <p>
+                Vul hieronder de gegevens in van de verkrijgers waarvoor u geen
+                aangifte doet...
+              </p>
+              <div id="gebruikersContainer">
+                <section id="verkrijger1">
+                  <h3>Verkrijger 1</h3>
+                  <section for="group">
+                    <label for="bsn1">Burgerservicenummer/RSIN</label>
+                    <input
+                      type="text"
+                      id="bsn1"
+                      name="bsn1"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for class="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c1"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section class="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c1"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section class="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c1"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section class="group">
+                    <label for="vermogenVerkrijger">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c1"
+                      name="vermogenVerkrijger1"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c1"
+                      name="vermogenVerkrijger1"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c2"
+                      name="verkrijgerBeroepPortie1"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c2"
+                      name="verkrijgerBeroepPortie1"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <section id="verkrijger2" class="hidden">
+                  <h3>Verkrijger 2</h3>
+                  <section for="group">
+                    <label for="bsn2">BSN:</label>
+                    <input
+                      type="text"
+                      id="bsn2"
+                      name="bsn2"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c2"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c2"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c2"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section for="group">
+                    <label for="vermogenVerkrijger2">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c22"
+                      name="vermogenVerkrijger2"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c22"
+                      name="vermogenVerkrijger2"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie2">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c3"
+                      name="verkrijgerBeroepPortie2"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c3"
+                      name="verkrijgerBeroepPortie2"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <section id="verkrijger3" class="hidden">
+                  <h3>Verkrijger 3</h3>
+                  <section for="group">
+                    <label for="bsn3">BSN:</label>
+                    <input
+                      type="text"
+                      id="bsn3"
+                      name="bsn3"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c3"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c3"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c3"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section for="group">
+                    <label for="vermogenVerkrijger3">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c33"
+                      name="vermogenVerkrijger3"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c33"
+                      name="vermogenVerkrijger3"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie3">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c4"
+                      name="verkrijgerBeroepPortie3"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c4"
+                      name="verkrijgerBeroepPortie3"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+
+                <section id="verkrijger4" class="hidden">
+                  <h3>Verkrijger 4</h3>
+                  <section for="group">
+                    <label for="bsn4">BSN:</label>
+                    <input
+                      type="text"
+                      id="bsn4"
+                      name="bsn4"
+                      pattern="[0-9]{8,9}"
+                      placeholder="Burgerservicenummer"
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="voorletters">Voorletter(s):</label>
+                    <input
+                      type="text"
+                      id="voorletters3c4"
+                      name="voorletters"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="tussenvoegsel">Tussenvoegsel:</label>
+                    <input
+                      type="text"
+                      id="tussenvoegsel3c4"
+                      name="tussenvoegsel"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+                  <section for="group">
+                    <label for="achternaam">Achternaam:</label>
+                    <input
+                      type="text"
+                      id="achternaam3c4"
+                      name="achternaam"
+                      pattern="[A-Za-z\.]*"
+                      placeholder=""
+                    />
+                  </section>
+
+                  <section for="group">
+                    <label for="vermogenVerkrijger4">
+                      Krijgt deze verkrijger waarvoor u geen aangifte doet het
+                      hele vermogen?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c44"
+                      name="vermogenVerkrijger4"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c44"
+                      name="vermogenVerkrijger4"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                  <section for="group">
+                    <label for="verkrijgerBeroepPortie4">
+                      Doet deze verkrijger een beroep op diens legitieme portie
+                      (wettelijke erfdeel)?</label
+                    >
+                  </section>
+                  <section class="group">
+                    <input
+                      type="radio"
+                      id="ja3c5"
+                      name="verkrijgerBeroepPortie4"
+                      value="ja"
+                    />
+                    <label for="ja">Ja</label>
+                    <input
+                      type="radio"
+                      id="nee3c5"
+                      name="verkrijgerBeroepPortie4"
+                      value="nee"
+                    />
+                    <label for="nee">Nee</label>
+                  </section>
+                </section>
+              </div>
+              <button type="button" id="voegVerkrijgerToe">
+                Voeg verkrijger toe (+)
+              </button>
+            </fieldset>
+          </div> -->
+
+          <fieldset class="vraagContainer" id="vierdeSectie">
+            <button type="submit">stuur</button>
+          </fieldset>
+
+          <fieldset class="vraagContainer" id="vijfdeSectie"></fieldset>
         </fieldset>
-
-        <fieldset class="vraagContainer" id="vierdeSectie"></fieldset>
-
-        <fieldset class="vraagContainer" id="vijfdeSectie"></fieldset>
       </form>
 
       <article>
@@ -641,5 +1579,6 @@
     <script src="./scripts/voorletters.js"></script>
     <script src="./scripts/vraag2.js"></script>
     <script src="./scripts/vraag3.js"></script>
+    <script src="./scripts/localstorage.js"></script>
   </body>
 </html>

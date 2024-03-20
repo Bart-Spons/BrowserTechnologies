@@ -1,3 +1,5 @@
+// call in de DOM
+
 function initForm5Inputs() {
     document.querySelectorAll('#form5 fieldset input[type="text"]').forEach(input => {
         input.addEventListener('input', checkInputsAndDisableOthers);
