@@ -11,5 +11,6 @@ var mm = String(today.getMonth() + 1).padStart(2, '0');
 var yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
-document.getElementById("overlijdensdatum").setAttribute("max", today);
+document.getElementById("1aOverlijdensdatum").setAttribute("max", today);
 document.getElementById("huwelijksdatum").setAttribute("max", today);
+document.getElementById("1dDatumTestament").setAttribute("max", today);

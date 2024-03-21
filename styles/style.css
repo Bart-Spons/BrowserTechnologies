@@ -78,6 +78,42 @@ fieldset {
   /* flex-direction: column; */
 }
 
+.country-list {
+  display: none;
+  /* position: absolute; */
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1000;
+  background-color: white;
+}
+
+.country-list div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.country-list div:hover {
+  background-color: #f0f0f0;
+}
+
+
+.vraag:valid {
+  border: 2px solid green;
+}
+
+.subLegend {
+  background-color: whitesmoke;
+  color: black;
+  padding: 0;
+  border: none;
+  margin-bottom: -0.5em;
+}
+
+.subFieldset {
+  border: none;
+  background-color: whitesmoke;
+}
+
 .group {
   /* display: flex; */
   /* justify-content: space-between; */
@@ -105,15 +141,17 @@ fieldset:user-invalid {
   border-color: red;
 }
 
-fieldset:valid {
-  border: solid 2px green;
+fieldset:valid .subLegend {
+  color: green;
 }
 
-.vraagContainer:nth-of-type(1):valid {
+#eersteSectie:valid {
   border: solid 2px green;
 
   & a {
-    background-color: blue;
+    background-color: grey;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
   }
 }
 
@@ -417,6 +455,12 @@ html:has(input[id="jaVruchtGebruik"]:checked) #vruchtGebruikExtra {
 
 html:has(input[id="jaPartnerErfdeel"]:checked) #naamPartnerErfdeelFieldset {
   display: grid;
+}
+
+details {
+  background-color: lightgrey;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 @media screen and (width < 600px) {

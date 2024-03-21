@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initFormulieren();
     initOptioneleVragen();
     initForm5Inputs();
-    initLocalStorage();
+   // initLocalStorage();
+    //inputName();
     //  initForm5Inputs();
+   // applyDotAfterLetters('voorletters');
 });
 
 // alle vragen verbergen behalve de eerste per pagina
@@ -67,7 +69,7 @@ function showNext(e) {
     while (volgendeSectie && volgendeSectie.classList.contains('optioneel')) {
         if (e.target.defaultValue === 'ja') {
             volgendeSectie.classList.remove('verborgen');
-            volgendeSectie.querySelectorAll('input[type="radio"]').forEach(input => input.required = true);
+            volgendeSectie.querySelectorAll('input').forEach(input => input.required = true);
             showedSomething = true;
         } else if (e.target.defaultValue === 'nee') {
             volgendeSectie.classList.add('verborgen');
