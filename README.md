@@ -35,19 +35,19 @@ De inputfields hebben allemaal eenvalidatie. Nadat de gebruiker een veld invuld 
 </label
 ```
 
-![alt text](image.png)
+![alt text](./images/image.png)
 
 ## Voorletters en achternaam
 
 Hoofdletters bij de 'voorletters' en de 'achternaam' begint altijd met een hoofdletter. Dit heb ik beide gedaan door een script hiervoor te maken.
 
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
 
 ## Datum
 
 De datum heb ik gemaakt door input type date te gebruiken. Via Javascript heb ik toegevoegd dat de datum maximaal tot vandaag kan.
 
-![alt text](image-2.png)
+![alt text](./images/image-2.png)
 
 ## Localstorage
 
@@ -100,7 +100,7 @@ function initLocalStorage() {
 
 Velden (div class="formulier") valideren + navigatie groen kleuren
 
-![alt text](image-3.png)
+![alt text](./images/image-3.png)
 
 ## Shownext
 
@@ -152,22 +152,22 @@ function showNext(e) {
 
 Als alles is ingevuld dan kan de gerbuiker op de 'submit' button klikken. Er wordt vervolgens genavigeerd naar een andere pagina waar alle vragen met antwoorden te zien zijn. Dit is een website gemaakt door Jeremy Keith.
 
-![alt text](image-6.png)
+![alt text](./images/image-6.png)
 
 # Vraag 4 dynamisch
 
 De gebruiker kan dynamisch een legaat toevoegen. Ook kan de gebruiker een extra verkrijger toevoegen. Dit gaat ook dynamisch. Dit heb ik gedaan via Javascript
 
-![alt text](image-4.png)
+![alt text](./images/image-4.png)
 
 ## Toelichting
 
 Op de website zijn een aantal toelichtingen te vinden. Ik heb de huisstijl gebruikt van de belastingsdienst. De kleur blauw is daar vandaan gehaald.
 
-![alt text](image-5.png)
+![alt text](./images/image-5.png)
 
 ## Progressive enhancement
 
 Het formulier werkt met met alleen HTML. Door de fieldsets is het nog best wel overzichtelijk.
 
-![alt text](image-7.png)
+![alt text](./images/image-7.png)
