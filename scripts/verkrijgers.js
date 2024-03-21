@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let formCounter = 0; // Teller voor het uniek identificeren van formuliersecties
+  let formCounter = 0; // Teller voor het uniek identificeren van formuliersecties
 
-    function addFormSection() {
-        formCounter++;
-        const formSection = document.createElement('div');
-        formSection.className = 'formulier';
-        formSection.id = `form${formCounter}`;
-        formSection.innerHTML = `
+  function addFormSection() {
+    formCounter++;
+    const formSection = document.createElement('div');
+    formSection.className = 'formulier';
+    formSection.id = `form${formCounter}`;
+    formSection.innerHTML = `
         <div id="form12" class="formulier">
         <fieldset class="vraag">
           <legend>4a</legend>
           <h3>Verkrijger ${formCounter + 1}</h3>
-          <fieldset>
-            <legend>
+          <fieldset class="subFieldset">
+            <legend class="subLegend">
               Vul de gegevens in van de persoon of instelling.
             </legend>
             <p>Gegevens persoon</p>
@@ -658,9 +658,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
       </div>
         `;
-        document.getElementById('formsContainer').appendChild(formSection);
-    }
+    document.getElementById('formsContainer').appendChild(formSection);
+  }
 
 
-    document.getElementById('addFormBtn').addEventListener('click', addFormSection);
+  document.getElementById('addFormBtn').addEventListener('click', addFormSection);
 });

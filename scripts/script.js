@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initFormulieren();
     initOptioneleVragen();
     initForm5Inputs();
-   // initLocalStorage();
+    // initLocalStorage();
     //inputName();
     //  initForm5Inputs();
-   // applyDotAfterLetters('voorletters');
+    // applyDotAfterLetters('voorletters');
 });
 
 // alle vragen verbergen behalve de eerste per pagina
@@ -58,6 +58,7 @@ function resetValue(element) {
 
 // Optionele vragen tonen, als de radiobutton 'ja' is
 // en verbergen als de radiobutton 'nee' is
+// als ja, dan input verplicht maken
 function showNext(e) {
     const huidigeSectie = e.target.closest('.vraagContainer');
     const isNested = huidigeSectie.getAttribute('data-id');
@@ -74,6 +75,8 @@ function showNext(e) {
         } else if (e.target.defaultValue === 'nee') {
             volgendeSectie.classList.add('verborgen');
             volgendeSectie.querySelectorAll('input, select, textarea').forEach(resetValue);
+
+
         }
         volgendeSectie = volgendeSectie.nextElementSibling;
     }

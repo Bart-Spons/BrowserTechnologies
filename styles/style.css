@@ -70,7 +70,14 @@ fieldset {
   grid-template-columns: 1fr;
   /* margin-right: 10rem; */
 }
-
+li a {
+  display: block; /* Maakt de link een blokelement */
+  width: 100%; /* Zorgt ervoor dat het de volledige breedte van de li inneemt */
+  height: 100%; /* Optioneel, afhankelijk van je opmaak */
+  text-decoration: none; /* Verwijdert de onderstreping van de link, optioneel */
+  color: inherit;
+  padding: 1rem;
+}
 .vraag {
   background-color: whitesmoke;
   /* margin-right: 60rem; */
@@ -96,7 +103,6 @@ fieldset {
   background-color: #f0f0f0;
 }
 
-
 .vraag:valid {
   border: 2px solid green;
 }
@@ -112,6 +118,12 @@ fieldset {
 .subFieldset {
   border: none;
   background-color: whitesmoke;
+}
+
+.subFieldset2{
+  border: none;
+  background-color: white;
+
 }
 
 .group {
@@ -143,6 +155,12 @@ fieldset:user-invalid {
 
 fieldset:valid .subLegend {
   color: green;
+}
+
+fieldset:valid .subLegend2 {
+  background-color: white;
+  color: green;
+  padding: 0;
 }
 
 #eersteSectie:valid {
@@ -268,7 +286,6 @@ ul {
 }
 
 li {
-  padding: 1rem;
   /* border: 2px solid black; */
   background-color: var(--hemelBlauw);
   color: white;

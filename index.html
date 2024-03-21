@@ -784,7 +784,7 @@
                 </legend>
 
                 <label for="3aExecuteur">
-                  <input type="radio" id="3aExecuteur" name="executeur" /> Ik
+                  <input type="radio" id="3aExecuteur" name="executeur" required/> Ik
                   ben executeur en doe aangifte voor alle personen en/of
                   instellingen die iets krijgen uit de nalatenschap
                   (verkrijgers). Geef aan voor hoeveel verkrijgers u aangifte
@@ -796,6 +796,7 @@
                     type="tel"
                     id="3aExecuteurInput"
                     name="executeurFile"
+                    
                   />
                 </label>
 
@@ -805,7 +806,7 @@
                 </p>
 
                 <label for="erfgenaamAlleen"
-                  ><input type="radio" id="erfgenaamAlleen" name="executeur" />
+                  ><input type="radio" id="erfgenaamAlleen" name="executeur" required/>
                   Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor
                   meerdere personen en/of instellingen die iets krijgen uit de
                   nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers
@@ -824,6 +825,7 @@
                     type="radio"
                     id="erfgenaamZelfAangifteSamen"
                     name="executeur"
+                    required
                   />
                   Ik ben erfgenaam en doe samen met andere erfgenamen aangifte.
                   Geef het aantal personen en/of instellingen aan die iets
@@ -834,16 +836,16 @@
                   <input
                     type="tel"
                     id="erfgenaamZelfAangifteSamenInput"
-                    name="erfgenaamZelfAangifteSamenFile"
+                    name="erfgenaamAlleenFile"
                 /></label>
 
                 <label for="erfgenaamZelf"
-                  ><input type="radio" id="erfgenaamZelf" name="executeur" /> Ik
+                  ><input type="radio" id="erfgenaamZelf" name="executeur" required/> Ik
                   ben erfgenaam en doe alleen aangifte voor mijzelf.</label
                 >
 
                 <label for="geenErfgenaam">
-                  <input type="radio" id="geenErfgenaam" name="executeur" />Ik
+                  <input type="radio" id="geenErfgenaam" name="executeur" required/>Ik
                   ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.
                   Geef aan voor hoeveel verkrijgers u aangifte doet.
                 </label>
@@ -2053,24 +2055,32 @@
                   <section id="legaat1">
                     <h3>Specificatie legaat 1</h3>
                     <fieldset>
+                      <fieldset class="subFieldset2">
+                        <legend class="subLegend2">Omschrijving van het gelaat</legend>
                       <label for="omschrijvingLegaat1"
-                        >Omschrijving van het legaat
+                        >
                         <input
                           type="text"
                           id="omschrijvingLegaat1"
                           name="omschrijvingLegaat1"
-                      /></label>
+                      /></label></fieldset>
 
+                      <fieldset class="subFieldset2">
+                        <legend class="subLegend2">
+                          Wat is de waarde van dit legaat?
+                        </legend>
+                      
                       <label for="waardeLegaat1"
-                        >Waarde van het legaat?
+                        >
                         <input
                           type="number"
                           id="waardeLegaat1"
                           name="waardeLegaat1"
                       /></label>
+                    </fieldset>
 
-                      <fieldset class="subFieldset">
-                        <legend class="subLegend">
+                      <fieldset class="subFieldset2">
+                        <legend class="subLegend2">
                           Komt dit legaat ten laste van een andere verkrijger?
                         </legend>
 
@@ -2095,16 +2105,21 @@
                         >
                       </fieldset>
 
+                      <fieldset class="subFieldset2">
+                        <legend class="subLegend2">
+                          Burgerservicenummer andere verkrijger
+                          </legend>
                       <label for="bsnAndereVerkrijger1"
-                        >Burgerservicenummer andere verkrijger
+                        >
                         <input
                           type="text"
                           id="bsnAndereVerkrijger1"
                           name="bsnAndereVerkrijger1"
                       /></label>
+                    </fieldset>
 
-                      <fieldset class="subFieldset">
-                        <legend class="subLegend">
+                      <fieldset class="subFieldset2">
+                        <legend class="subLegend2">
                           Is dit legaat vrij van recht?
                         </legend>
                         <label for="jaLegaatVrijVanRecht1"
@@ -2127,8 +2142,8 @@
                         >
                       </fieldset>
 
-                      <fieldset class="subFieldset">
-                        <legend class="subLegend">
+                      <fieldset class="subFieldset2">
+                        <legend class="subLegend2">
                           Is dit legaat aanvaard?
                         </legend>
                         <label for="jaLegaatAanvaard1"
@@ -2168,7 +2183,7 @@
                         type="text"
                         id="OmschrijvingVanDeInbreng"
                       /> </label
-                    >ƒ
+                    >
                     <label for="WaardeVanDeInbreng">
                       Waarde van de inbreng
                       <input type="number" id="WaardeVanDeInbreng" />
@@ -2179,7 +2194,7 @@
                 <fieldset class="vraag">
                   <legend>4g</legend>
                   <fieldset class="subFieldset">
-                    <legend class="subLegend"></legend>
+                    <legend class="subLegend">Ondertekening door de verkrijger</legend>
 
                     <label for="4gDatum">
                       Datum <input type="date" id="4gDatum" name="datum" />
