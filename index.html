@@ -784,8 +784,13 @@
                 </legend>
 
                 <label for="3aExecuteur">
-                  <input type="radio" id="3aExecuteur" name="executeur" required/> Ik
-                  ben executeur en doe aangifte voor alle personen en/of
+                  <input
+                    type="radio"
+                    id="3aExecuteur"
+                    name="executeur"
+                    required
+                  />
+                  Ik ben executeur en doe aangifte voor alle personen en/of
                   instellingen die iets krijgen uit de nalatenschap
                   (verkrijgers). Geef aan voor hoeveel verkrijgers u aangifte
                   doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.
@@ -796,7 +801,6 @@
                     type="tel"
                     id="3aExecuteurInput"
                     name="executeurFile"
-                    
                   />
                 </label>
 
@@ -806,7 +810,12 @@
                 </p>
 
                 <label for="erfgenaamAlleen"
-                  ><input type="radio" id="erfgenaamAlleen" name="executeur" required/>
+                  ><input
+                    type="radio"
+                    id="erfgenaamAlleen"
+                    name="executeur"
+                    required
+                  />
                   Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor
                   meerdere personen en/of instellingen die iets krijgen uit de
                   nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers
@@ -840,14 +849,23 @@
                 /></label>
 
                 <label for="erfgenaamZelf"
-                  ><input type="radio" id="erfgenaamZelf" name="executeur" required/> Ik
-                  ben erfgenaam en doe alleen aangifte voor mijzelf.</label
+                  ><input
+                    type="radio"
+                    id="erfgenaamZelf"
+                    name="executeur"
+                    required
+                  />
+                  Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label
                 >
 
                 <label for="geenErfgenaam">
-                  <input type="radio" id="geenErfgenaam" name="executeur" required/>Ik
-                  ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.
-                  Geef aan voor hoeveel verkrijgers u aangifte doet.
+                  <input
+                    type="radio"
+                    id="geenErfgenaam"
+                    name="executeur"
+                    required
+                  />Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te
+                  doen. Geef aan voor hoeveel verkrijgers u aangifte doet.
                 </label>
 
                 <label for="geenErfgenaamInput">
@@ -1529,10 +1547,10 @@
                 <legend>4a</legend>
 
                 <fieldset class="subFieldset">
-                  <h3>Verkrijger 1</h3>
                   <legend class="subLegend">
                     Vul de gegevens in van de persoon of instelling.
                   </legend>
+                  <h3>Verkrijger 1</h3>
                   <p>Gegevens persoon</p>
                   <label for="4aBsn"
                     >Burgerservicenummer persoon
@@ -1777,8 +1795,8 @@
                       />
                       Nee
                     </label>
-                    <fieldset>
-                      <legend>
+                    <fieldset class="subFieldset">
+                      <legend class="subLegend">
                         Datum notariële samen levings overeenkomst
                       </legend>
                       <label for="datumNotarieleAkte"
@@ -2056,28 +2074,29 @@
                     <h3>Specificatie legaat 1</h3>
                     <fieldset>
                       <fieldset class="subFieldset2">
-                        <legend class="subLegend2">Omschrijving van het gelaat</legend>
-                      <label for="omschrijvingLegaat1"
-                        >
-                        <input
-                          type="text"
-                          id="omschrijvingLegaat1"
-                          name="omschrijvingLegaat1"
-                      /></label></fieldset>
+                        <legend class="subLegend2">
+                          Omschrijving van het gelaat
+                        </legend>
+                        <label for="omschrijvingLegaat1">
+                          <input
+                            type="text"
+                            id="omschrijvingLegaat1"
+                            name="omschrijvingLegaat1"
+                        /></label>
+                      </fieldset>
 
                       <fieldset class="subFieldset2">
                         <legend class="subLegend2">
                           Wat is de waarde van dit legaat?
                         </legend>
-                      
-                      <label for="waardeLegaat1"
-                        >
-                        <input
-                          type="number"
-                          id="waardeLegaat1"
-                          name="waardeLegaat1"
-                      /></label>
-                    </fieldset>
+
+                        <label for="waardeLegaat1">
+                          <input
+                            type="number"
+                            id="waardeLegaat1"
+                            name="waardeLegaat1"
+                        /></label>
+                      </fieldset>
 
                       <fieldset class="subFieldset2">
                         <legend class="subLegend2">
@@ -2108,15 +2127,14 @@
                       <fieldset class="subFieldset2">
                         <legend class="subLegend2">
                           Burgerservicenummer andere verkrijger
-                          </legend>
-                      <label for="bsnAndereVerkrijger1"
-                        >
-                        <input
-                          type="text"
-                          id="bsnAndereVerkrijger1"
-                          name="bsnAndereVerkrijger1"
-                      /></label>
-                    </fieldset>
+                        </legend>
+                        <label for="bsnAndereVerkrijger1">
+                          <input
+                            type="text"
+                            id="bsnAndereVerkrijger1"
+                            name="bsnAndereVerkrijger1"
+                        /></label>
+                      </fieldset>
 
                       <fieldset class="subFieldset2">
                         <legend class="subLegend2">
@@ -2179,11 +2197,8 @@
 
                     <label for="OmschrijvingVanDeInbreng">
                       Omschrijving van de inbreng
-                      <input
-                        type="text"
-                        id="OmschrijvingVanDeInbreng"
-                      /> </label
-                    >
+                      <input type="text" id="OmschrijvingVanDeInbreng" />
+                    </label>
                     <label for="WaardeVanDeInbreng">
                       Waarde van de inbreng
                       <input type="number" id="WaardeVanDeInbreng" />
@@ -2194,7 +2209,9 @@
                 <fieldset class="vraag">
                   <legend>4g</legend>
                   <fieldset class="subFieldset">
-                    <legend class="subLegend">Ondertekening door de verkrijger</legend>
+                    <legend class="subLegend">
+                      Ondertekening door de verkrijger
+                    </legend>
 
                     <label for="4gDatum">
                       Datum <input type="date" id="4gDatum" name="datum" />
@@ -2217,6 +2234,8 @@
         </fieldset>
 
         <fieldset class="vraagContainer" id="vijfdeSectie">
+          <legend>5</legend>
+          <h3>Als vraag 1 t/m 4 is ingevuld klikt op stuur!</h3>
           <button type="submit">stuur</button>
         </fieldset>
       </form>

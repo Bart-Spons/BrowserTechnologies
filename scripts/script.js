@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initFormulieren();
     initOptioneleVragen();
     initForm5Inputs();
-    // initLocalStorage();
+    initLocalStorage();
     //inputName();
     //  initForm5Inputs();
     // applyDotAfterLetters('voorletters');
@@ -18,7 +18,7 @@ function initFormulieren() {
 
     formulieren.forEach((formulier, index) => {
         // Alleen specifieke formulieren tonen
-        if (![0, 1, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14].includes(index)) {
+        if (![0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14].includes(index)) {
             formulier.classList.add('verborgen');
         }
         formulier.addEventListener('change', (event) => handleFormChange(event, formulier));
@@ -133,3 +133,27 @@ radiobuttons.forEach(radiobutton => {
 
 
 
+// const inputFields = document.querySelectorAll('.formulier input');
+// inputFields.forEach(function (inputField) {
+//     inputField.addEventListener("change", function () {
+//         const value = inputField.value;
+//         const key = 'dataSaved' + inputField.id;
+
+//         localStorage.setItem(key, value);
+
+//         // alert("Data opgeslagen");
+//     })
+// })
+
+// window.addEventListener("load", function () {
+//     inputFields.forEach(function (inputField) {
+//         const key = 'dataSaved' + inputField.id;
+//         const dataSaved = localStorage.getItem(key);
+//         if (dataSaved !== null) {
+//             inputField.value = dataSaved;
+//             if (inputField.value === dataSaved) {
+//                 inputField.checked = true;
+//             }
+//         }
+//     });
+// })

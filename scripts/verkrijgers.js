@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4aBsn"
-                name="bsn"
+                name="bsn${formCounter + 1}"
                 pattern="[0-9]{8,9}"
                 placeholder=""
               /><span data-error
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4aVoorletters"
-                name="voorletters"
+                name="voorletters${formCounter + 1}"
                 pattern="[A-Za-z\.]*"
                 placeholder=""
               /><span data-error>Voer uw voorletter(s) in </span></label
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4aTussenvoegsel"
-                name="tussenvoegsel"
+                name="tussenvoegsel${formCounter + 1}"
                 pattern="[A-Za-z\.]*"
                 placeholder=""
             /></label>
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4aAchternaam"
-                name="achternaam"
+                name="achternaam${formCounter + 1}"
                 pattern="[A-Za-z\.]*"
                 placeholder=""
               /><span data-error>Voer uw achternaam in </span></label
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             <label for="4aGeboortedatum"
               >Geboortedatum:
-              <input type="date" id="4aGeboortedatum" name="geboortedatum"
+              <input type="date" id="4aGeboortedatum" name="geboortedatum${formCounter + 1}"
             /></label>
 
             <p>Gegevens instelling</p>
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4RSINinstelling"
-                name="RSINinstelling"
+                name="RSINinstelling${formCounter + 1}"
                 pattern="[0-9]{8,9}"
                 placeholder=""
               /><span data-error
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4aNaamInstelling"
-                name="naamInstelling"
+                name="naamInstelling${formCounter + 1}"
                 pattern="[A-Za-z\.]*"
                 placeholder=""
               /><span data-error>Voer de naam van de instelling in </span>
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4bStraat"
-                name="straat"
+                name="straat${formCounter + 1}"
                 pattern="[A-Za-z\.]*"
                 placeholder=""
               /><span data-error>Voer de straatnaam in </span></label
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4bHuisnummer"
-                name="huisnummer"
+                name="huisnummer${formCounter + 1}"
                 pattern="[0-9]*"
                 placeholder=""
               /><span data-error>Voer het huisnummer in </span>
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4bToevoeging"
-                name="toevoeging"
+                name="toevoeging${formCounter + 1}"
                 pattern="[A-Za-z]*"
                 placeholder=""
             /></label>
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4bPostcode"
-                name="postcode"
+                name="postcode${formCounter + 1}"
                 pattern="[0-9]{4}[A-Za-z]{2}"
                 placeholder=""
               /><span data-error
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4bWoonplaats"
-                name="woonplaats"
+                name="woonplaats${formCounter + 1}"
                 pattern="[A-Za-z\.]*"
                 placeholder=""
               /><span data-error>Voer de woonplaats in </span></label
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="text"
                 id="4bLand"
-                name="landcode"
+                name="landcode${formCounter + 1}"
                 placeholder="Nederland"
               />
             </label>
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ><input
                 type="radio"
                 id="echtgenoot"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="echtgenoot"
               />
               Echtgenoot</label
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ><input
                 type="radio"
                 id="zonderNotarieleAkte"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="ja"
               />
               Samenwoner zonder notariële akte</label
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ><input
                   type="radio"
                   id="ja5Jaar"
-                  name="relatieSamenwonerMetAkte"
+                  name="relatieSamenwonerMetAkte${formCounter + 1}"
                 />
                 Ja
               </label>
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ><input
                   type="radio"
                   id="nee5Jaar"
-                  name="relatieSamenwonerMetAkte"
+                  name="relatieSamenwonerMetAkte${formCounter + 1}"
                 />
                 Nee
               </label>
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ><input
                 type="radio"
                 id="metNotarieleAkte"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="ja"
               />
               metNotarieleAkte</label
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ><input
                   type="radio"
                   id="ja6Maanden"
-                  name="relatieSamenwonerMetAkte"
+                  name="relatieSamenwonerMetAkte${formCounter + 1}"
                 />
                 Ja
               </label>
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ><input
                   type="radio"
                   id="nee6Maanden"
-                  name="relatieSamenwonerMetAkte"
+                  name="relatieSamenwonerMetAkte${formCounter + 1}"
                 />
                 Nee
               </label>
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <input
                     type="date"
                     id="datumNotarieleAkte"
-                    name="datumNotarieleAkte"
+                    name="datumNotarieleAkte${formCounter + 1}"
                   />
                 </label>
               </fieldset>
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ><input
                 type="radio"
                 id="ouder"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="ouder"
               />
               Ouder</label
@@ -283,14 +283,14 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="exPartner"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="exPartner"
               />
               Ex-partner
             </label>
 
             <label for="kind">
-              <input type="radio" id="kind" name="relatie" value="kind" />
+              <input type="radio" id="kind" name="relatie${formCounter + 1}" value="kind" />
               Kind
             </label>
 
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="kindMetBeperking"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="kindMetBeperking"
               />
               Kind met beperking
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="pleegkind"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="pleegkind"
               />
               Pleegkind
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="kleinkind"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="kleinkind"
               />
               Kleinkind
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="achterKleinKind"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="achterKleinKind"
               />
               Achterkleinkind
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="algemeenNutBeogendeInstelling"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="algemeenNutBeogendeInstelling"
               />
               Algemeen nut beogende instelling
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="sociaalBelangBehartigendeInstelling"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="sociaalBelangBehartigendeInstelling"
               />
               Sociaal belang behartigende instelling
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="anders"
-                name="relatie"
+                name="relatie${formCounter + 1}"
                 value="ander"
               />
               Overige
@@ -379,18 +379,18 @@ document.addEventListener('DOMContentLoaded', function () {
             </legend>
             <div>
               <label for="breuk"
-                >Breuk <input type="number" id="breuk" name="breuk" /> /
+                >Breuk <input type="number" id="breuk" name="breuk${formCounter + 1}" /> /
               </label>
               <label for="breuk2">
-                <input type="number" id="breuk2" name="breuk2" />
+                <input type="number" id="breuk2" name="breuk2${formCounter + 1}" />
               </label>
             </div>
             <label for="percentage"
               >Percentage
-              <input type="number" id="percentage" name="percentage" />
+              <input type="number" id="percentage" name="percentage${formCounter + 1}" />
             </label>
             <label for="percentage2"
-              >% <input type="number" id="percentage2" name="percentage2"
+              >% <input type="number" id="percentage2" name="percentage2${formCounter + 1}"
             /></label>
           </fieldset>
           <fieldset class="subFieldset">
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="jaLegitiemePortie"
-                name="legitiemePort"
+                name="legitiemePort${formCounter + 1}"
               />
               Ja
             </label>
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="neeLegitiemePortie"
-                name="legitiemePort"
+                name="legitiemePort${formCounter + 1}"
               />
               Nee
             </label>
@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="jaVruchtGebruik"
-                name="vruchtGebruik"
+                name="vruchtGebruik${formCounter + 1}"
               />
               Ja
             </label>
@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="neeVruchtGebruik"
-                name="vruchtGebruik"
+                name="vruchtGebruik${formCounter + 1}"
               />
               Nee
             </label>
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input
                   type="radio"
                   id="jaUitstelBetaling"
-                  name="uitstelBetaling"
+                  name="uitstelBetaling${formCounter + 1}"
                 />
                 Ja
               </label>
@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input
                   type="radio"
                   id="neeUitstelBetaling"
-                  name="uitstelBetaling"
+                  name="uitstelBetaling${formCounter + 1}"
                 />
                 Nee
               </label>
@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input
                   type="number"
                   id="waardeVruchtGebruik"
-                  name="waardeVruchtGebruik"
+                  name="waardeVruchtGebruik${formCounter + 1}"
                 />
               </label>
             </fieldset>
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="jaPartnerErfdeel"
-                name="partnerErfdeel"
+                name="partnerErfdeel${formCounter + 1}"
               />
               Ja
             </label>
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <input
                 type="radio"
                 id="neePartnerErfdeel"
-                name="partnerErfdeel"
+                name="partnerErfdeel${formCounter + 1}"
               />
               Nee
             </label>
@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input
                   type="text"
                   id="naamPartnerErfdeel"
-                  name="naamPartnerErfdeel"
+                  name="naamPartnerErfdeel${formCounter + 1}"
                 />
               </label>
               <label for="bsnPartnerErfdeel"
@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input
                   type="text"
                   id="bsnPartnerErfdeel"
-                  name="bsnPartnerErfdeel"
+                  name="bsnPartnerErfdeel${formCounter + 1}"
                   pattern="[0-9]{8,9}"
                 />
               </label>
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <input
                           type="text"
                           id="omschrijvingLegaat1"
-                          name="omschrijvingLegaat1"
+                          name="omschrijvingLegaat1${formCounter + 1}"
                       /></label></fieldset>
 
                       <fieldset class="subFieldset2">
@@ -549,7 +549,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <input
                           type="number"
                           id="waardeLegaat1"
-                          name="waardeLegaat1"
+                          name="waardeLegaat1${formCounter + 1}"
                       /></label>
                     </fieldset>
 
@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ><input
                             type="radio"
                             id="jaTenLasteVanAndereVerkrijger1"
-                            name="tenLasteVanAndereVerkrijger1"
+                            name="tenLasteVanAndereVerkrijger1${formCounter + 1}"
                             value="ja"
                           />
                           Ja</label
@@ -572,7 +572,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ><input
                             type="radio"
                             id="neeTenLasteVanAndereVerkrijger1"
-                            name="tenLasteVanAndereVerkrijger1"
+                            name="tenLasteVanAndereVerkrijger1${formCounter + 1}"
                             value="nee"
                           />
                           Nee</label
@@ -588,7 +588,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <input
                           type="text"
                           id="bsnAndereVerkrijger1"
-                          name="bsnAndereVerkrijger1"
+                          name="bsnAndereVerkrijger1${formCounter + 1}"
                       /></label>
                     </fieldset>
 
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ><input
                             type="radio"
                             id="jaLegaatVrijVanRecht1"
-                            name="legaatVrijVanRecht1"
+                            name="legaatVrijVanRecht1${formCounter + 1}"
                             value="ja"
                           />
                           Ja</label
@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ><input
                             type="radio"
                             id="neeLegaatVrijVanRecht1"
-                            name="legaatVrijVanRecht1"
+                            name="legaatVrijVanRecht1${formCounter + 1}"
                             value="nee"
                           />
                           Nee</label
@@ -624,7 +624,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ><input
                             type="radio"
                             id="jaLegaatAanvaard1"
-                            name="legaatAanvaard1"
+                            name="legaatAanvaard1${formCounter + 1}"
                             value="ja"
                           />
                           Ja</label
@@ -633,7 +633,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           ><input
                             type="radio"
                             id="neeLegaatAanvaard1"
-                            name="legaatAanvaard1"
+                            name="legaatAanvaard1${formCounter + 1}"
                             value="nee"
                           />
                           Nee</label
@@ -672,14 +672,14 @@ document.addEventListener('DOMContentLoaded', function () {
                   <legend class="subLegend">Ondertekening door de verkrijger</legend>
 
                   <label for="4gDatum">
-                    Datum <input type="date" id="4gDatum" name="datum" />
+                    Datum <input type="date" id="4gDatum" name="datum${formCounter + 1}" />
                   </label>
                   <label for="4gHandtekening"
                     >Handtekening
                     <input
                       type="file"
                       id="4gHandtekening"
-                      name="handtekening"
+                      name="handtekening${formCounter + 1}"
                       accept="image/png, image/jpeg"
                     />
                   </label>
