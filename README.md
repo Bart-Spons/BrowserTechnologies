@@ -8,15 +8,19 @@ Op basis van een officiële PDF van de Nederlandse belastingdienst ga je een int
 
 Je bouwt dit formulier volgens de principes van progressive enhancement. Je gaat je formulier testen op allerlei verschillende hard- en sortware, zowel oud als niet, met allerlei verschillende manieren van input en output. Je zorgt er voor dat het overal werkt, en je zorgt er voor dat het zo mogelijk zelfs heel erg goed werkt.
 
-## Eerste versie
+## Eerdere versie input fields
+Bij mijn eerste versie heb ik een volgende button gemaakt die de velden checked. Achteraf bleek dat dit best wel veel werk is dus dit heb ik later weggehaald. Het was ook niet ideaal dat de gebruiker zijn/haar input niet direct wordt gevalideerd.
 
 ![eerste versie 1a](./images/1a.png)
 ![error versie 1a](./images/1aError.png)
 
+## Eerdere versie radiobuttons
+Ik heb dezelfde techniek gebruikt voor de radiobuttons. Hier heb ik ook een check gemaakt door gebruik te maken van een button. Dit heb ik later dynamisch gemaakt omdat het anders te veel kliks worden.
+
 ![alt text](./images/1b.png)
 ![alt text](./images/1b_close.png)
 
-Heel veel kliks
+
 
 # Uitleg eindwerk
 
