@@ -14,7 +14,9 @@ article a {
 }
 
 article {
-  margin: 0 10rem 0 10rem;
+  /* margin: 0 10rem 0 10rem; */
+  background-color: white;
+  padding: 1rem;
 }
 
 @media screen and (width < 800px) {

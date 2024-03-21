@@ -120,10 +120,9 @@ li a {
   background-color: whitesmoke;
 }
 
-.subFieldset2{
+.subFieldset2 {
   border: none;
   background-color: white;
-
 }
 
 .group {
@@ -327,10 +326,13 @@ input:user-invalid:not(:placeholder-shown) + span[data-error] {
 
 #eersteSectie {
   display: none;
+  border: none;
+  padding: 2rem;
 }
 
 #eersteSectie:target {
   display: block;
+  scroll-margin-top: 500px;
 }
 
 ul {
@@ -400,34 +402,46 @@ html:has(input[name="adresInstelling"]:checked) #nederland {
 
 #tweedeSectie {
   display: none;
+  border: none;
+  padding: 2rem;
 }
 
 #tweedeSectie:target {
   display: block;
+  scroll-margin-top: 500px;
 }
 
 #derdeSectie {
   display: none;
+  border: none;
+  padding: 2rem;
 }
 
 #derdeSectie:target {
   display: block;
+  scroll-margin-top: 500px;
 }
 
 #vierdeSectie {
   display: none;
+  border: none;
+  padding: 2rem;
 }
 
 #vierdeSectie:target {
   display: block;
+  scroll-margin-top: 500px;
 }
 
 #vijfdeSectie {
   display: none;
+  border: none;
+  padding: 2rem;
 }
 
 #vijfdeSectie:target {
   display: block;
+  scroll-margin-top: 500px;
 }
 
 .verkrijger:not(:first-child) {
@@ -487,5 +501,19 @@ details {
   label {
     width: 8rem;
     display: inline-block;
+  }
+}
+
+@media screen and (width > 1024px) {
+  main {
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+  body {
+    background-color: var(--achtergrondGrijs);
+  }
+  header p {
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
   }
 }

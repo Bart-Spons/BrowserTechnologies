@@ -75,7 +75,7 @@ function showNext(e) {
         } else if (e.target.defaultValue === 'nee') {
             volgendeSectie.classList.add('verborgen');
             volgendeSectie.querySelectorAll('input, select, textarea').forEach(resetValue);
-
+            volgendeSectie.querySelectorAll('input').forEach(input => input.required = false);
 
         }
         volgendeSectie = volgendeSectie.nextElementSibling;
